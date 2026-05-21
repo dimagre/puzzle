@@ -1,0 +1,11 @@
+{
+  "common": {
+    "title": "PuzzleShare",
+    "subtitle": "Jigsaw puzzle rental & exchange",
+    "footer": "© 2024 PuzzleShare. All rights reserved."
+  },
+  "nav": {
+    "home": "Home",
+    "login": "Sign In"
+  }
+}

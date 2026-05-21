@@ -43,14 +43,7 @@ Edit `.env.local` with your actual values:
 - `DATABASE_URL` — your PostgreSQL connection string
 - `AUTH_SECRET` — generate with `openssl rand -base64 32`
 
-4. Apply database migrations and seed sample data:
-
-```bash
-npx prisma migrate dev
-npm run prisma:seed
-```
-
-5. Start the development server:
+4. Start the development server:
 
 ```bash
 npm run dev
@@ -64,4 +57,3 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 - `npm run build` — Build for production
 - `npm run start` — Start production server
 - `npm run lint` — Run ESLint
-- `npm run prisma:seed` — Populate the database with sample users, categories, puzzles, and orders

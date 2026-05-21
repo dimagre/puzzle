@@ -6,6 +6,54 @@
   },
   "nav": {
     "home": "Home",
-    "login": "Sign In"
+    "login": "Sign In",
+    "catalog": "Catalog"
+  },
+  "catalog": {
+    "title": "Puzzle Catalog",
+    "subtitle": "Browse and rent jigsaw puzzles",
+    "filters": "Filters",
+    "filtersOpen": "Open filters",
+    "filtersClose": "Close filters",
+    "category": "Category",
+    "pieceCount": "Piece Count",
+    "condition": "Condition",
+    "type": "Type",
+    "allConditions": "All conditions",
+    "allTypes": "All types",
+    "allPieceCounts": "All piece counts",
+    "rent": "Rent",
+    "perDay": "₴/day",
+    "pieces": "pcs",
+    "noResults": "No puzzles match your filters",
+    "noResultsHint": "Try adjusting or clearing your filters",
+    "clearFilters": "Clear filters",
+    "loading": "Loading puzzles...",
+    "categories": {
+      "nature": "Nature",
+      "cities": "Cities",
+      "art": "Art",
+      "animals": "Animals",
+      "fantasy": "Fantasy",
+      "abstract": "Abstract"
+    },
+    "conditions": {
+      "new": "New",
+      "excellent": "Excellent",
+      "good": "Good",
+      "fair": "Fair"
+    },
+    "types": {
+      "standard": "Standard",
+      "panoramic": "Panoramic",
+      "round": "Round",
+      "3d": "3D"
+    },
+    "pieceCounts": {
+      "100-500": "100–500",
+      "500-1000": "500–1000",
+      "1000-2000": "1000–2000",
+      "2000+": "2000+"
+    }
   }
 }

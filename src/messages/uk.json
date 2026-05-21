@@ -1,0 +1,11 @@
+{
+  "common": {
+    "title": "PuzzleShare",
+    "subtitle": "Оренда та обмін пазлами",
+    "footer": "© 2024 PuzzleShare. Усі права захищені."
+  },
+  "nav": {
+    "home": "Головна",
+    "login": "Увійти"
+  }
+}

@@ -6,6 +6,55 @@
   },
   "nav": {
     "home": "Home",
+    "catalog": "Catalog",
     "login": "Sign In"
+  },
+  "catalog": {
+    "title": "Puzzle Catalog",
+    "subtitle": "Find the perfect puzzle to rent",
+    "filters": "Filters",
+    "filtersOpen": "Open filters",
+    "filtersClose": "Close filters",
+    "filtersApply": "Apply",
+    "filtersClear": "Clear",
+    "category": "Category",
+    "pieceCount": "Piece Count",
+    "condition": "Condition",
+    "type": "Type",
+    "rent": "Rent",
+    "perDay": "₴/day",
+    "pieces": "pcs.",
+    "emptyTitle": "No puzzles found",
+    "emptyDescription": "Try adjusting or clearing your filters",
+    "loading": "Loading...",
+    "categories": {
+      "landscape": "Landscapes",
+      "animals": "Animals",
+      "art": "Art",
+      "cities": "Cities",
+      "fantasy": "Fantasy",
+      "abstract": "Abstract"
+    },
+    "conditions": {
+      "new": "New",
+      "excellent": "Excellent",
+      "good": "Good",
+      "fair": "Fair"
+    },
+    "types": {
+      "all": "All types",
+      "standard": "Standard",
+      "panoramic": "Panoramic",
+      "shaped": "Shaped",
+      "3d": "3D"
+    },
+    "pieceRanges": {
+      "all": "Any count",
+      "100-500": "100–500 pieces",
+      "500-1000": "500–1000 pieces",
+      "1000-2000": "1000–2000 pieces",
+      "2000+": "2000+ pieces"
+    },
+    "conditionAll": "Any condition"
   }
 }

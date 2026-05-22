@@ -16,6 +16,7 @@ import {
   mergeAdminNotes,
   serializeAdminOrderDetail,
 } from "@/lib/api/admin-orders-serialize";
+import { notifyOrderStatusChange } from "@/lib/email/notify";
 
 export const dynamic = "force-dynamic";
 
@@ -140,6 +141,16 @@ export async function PATCH(req: NextRequest, { params }: RouteContext) {
       data,
       include: ORDER_FULL_INCLUDE,
     });
+
+    if (input.status !== undefined && input.status !== existing.status) {
+      notifyOrderStatusChange({
+        orderId: updated.id,
+        status: updated.status,
+        customerName: updated.user.name,
+        customerEmail: updated.user.email,
+        trackingNumber: updated.trackingNumber,
+      });
+    }
 
     return NextResponse.json(serializeAdminOrderDetail(updated));
   } catch (err) {

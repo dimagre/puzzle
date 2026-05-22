@@ -312,7 +312,104 @@
   "admin": {
     "nav": {
       "heading": "Admin",
-      "puzzles": "Puzzles"
+      "puzzles": "Puzzles",
+      "orders": "Orders"
+    },
+    "orders": {
+      "title": "Orders",
+      "subtitle": "{total} total",
+      "empty": {
+        "title": "No orders yet",
+        "description": "Once customers place orders, they will appear here."
+      },
+      "filters": {
+        "search": "Customer",
+        "searchPlaceholder": "Name or email…",
+        "status": "Status",
+        "statusAll": "All statuses",
+        "from": "From",
+        "to": "To",
+        "apply": "Apply",
+        "reset": "Reset"
+      },
+      "table": {
+        "id": "Order",
+        "customer": "Customer",
+        "status": "Status",
+        "delivery": "Delivery",
+        "total": "Total",
+        "items": "Items",
+        "date": "Created",
+        "view": "View"
+      },
+      "pagination": {
+        "label": "Page navigation",
+        "prev": "Previous",
+        "next": "Next",
+        "of": "Page {page} of {totalPages}"
+      },
+      "detail": {
+        "back": "Back to orders",
+        "title": "Order #{id}",
+        "createdAt": "Created",
+        "updatedAt": "Last updated",
+        "customerHeading": "Customer",
+        "customerName": "Name",
+        "customerEmail": "Email",
+        "customerPhone": "Phone",
+        "phoneNotSet": "—",
+        "deliveryHeading": "Delivery",
+        "deliveryMethod": "Method",
+        "deliveryAddress": "Address",
+        "deliveryAddressNotSet": "Not provided",
+        "trackingNumber": "Tracking number",
+        "trackingNotSet": "Not yet assigned",
+        "trackingPlaceholder": "Carrier tracking ID",
+        "saveTracking": "Save tracking",
+        "savingTracking": "Saving…",
+        "savedTracking": "Tracking saved",
+        "savedTrackingFailed": "Could not save tracking",
+        "itemsHeading": "Items",
+        "itemRentalDays": "{days} day(s)",
+        "itemPricePerDay": "Price / day",
+        "itemDeposit": "Deposit",
+        "itemSubtotal": "Subtotal",
+        "summaryHeading": "Summary",
+        "rentalSubtotal": "Rental subtotal",
+        "deposit": "Deposit",
+        "total": "Total",
+        "paymentsHeading": "Payments",
+        "paymentsEmpty": "No payments recorded yet.",
+        "paymentType": "Type",
+        "paymentStatus": "Status",
+        "paymentAmount": "Amount",
+        "paymentInvoice": "Invoice",
+        "paymentRef": "Ref",
+        "paymentDate": "Date",
+        "notesHeading": "Internal notes",
+        "notesDescription": "Visible to admins only.",
+        "notesPlaceholder": "Add a note for the team…",
+        "saveNotes": "Save notes",
+        "savingNotes": "Saving…",
+        "savedNotes": "Notes saved",
+        "savedNotesFailed": "Could not save notes",
+        "transitionsHeading": "Status transitions",
+        "transitionsEmpty": "This order is in a terminal status.",
+        "transitionConfirm": "Mark as {status}",
+        "transitionShippedNeedsTracking": "Enter a tracking number above to ship.",
+        "transitionApplying": "Updating…",
+        "transitionFailed": "Could not update status"
+      },
+      "paymentType": {
+        "RENTAL": "Rental",
+        "DEPOSIT_HOLD": "Deposit hold"
+      },
+      "paymentStatus": {
+        "PENDING": "Pending",
+        "SUCCESS": "Success",
+        "FAILURE": "Failure",
+        "REVERSED": "Reversed"
+      }
     },
     "puzzles": {
       "title": "Puzzles",

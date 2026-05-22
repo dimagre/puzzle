@@ -312,7 +312,104 @@
   "admin": {
     "nav": {
       "heading": "Адмін",
-      "puzzles": "Пазли"
+      "puzzles": "Пазли",
+      "orders": "Замовлення"
+    },
+    "orders": {
+      "title": "Замовлення",
+      "subtitle": "Всього: {total}",
+      "empty": {
+        "title": "Замовлень поки немає",
+        "description": "Щойно клієнти зроблять перші замовлення, вони з'являться тут."
+      },
+      "filters": {
+        "search": "Клієнт",
+        "searchPlaceholder": "Імʼя або email…",
+        "status": "Статус",
+        "statusAll": "Усі статуси",
+        "from": "Від",
+        "to": "До",
+        "apply": "Застосувати",
+        "reset": "Скинути"
+      },
+      "table": {
+        "id": "Замовлення",
+        "customer": "Клієнт",
+        "status": "Статус",
+        "delivery": "Доставка",
+        "total": "Сума",
+        "items": "Позиції",
+        "date": "Створено",
+        "view": "Переглянути"
+      },
+      "pagination": {
+        "label": "Навігація по сторінках",
+        "prev": "Назад",
+        "next": "Вперед",
+        "of": "Сторінка {page} з {totalPages}"
+      },
+      "detail": {
+        "back": "До списку замовлень",
+        "title": "Замовлення #{id}",
+        "createdAt": "Створено",
+        "updatedAt": "Оновлено",
+        "customerHeading": "Клієнт",
+        "customerName": "Імʼя",
+        "customerEmail": "Email",
+        "customerPhone": "Телефон",
+        "phoneNotSet": "—",
+        "deliveryHeading": "Доставка",
+        "deliveryMethod": "Спосіб",
+        "deliveryAddress": "Адреса",
+        "deliveryAddressNotSet": "Не вказано",
+        "trackingNumber": "Номер відстеження",
+        "trackingNotSet": "Не вказано",
+        "trackingPlaceholder": "Номер ТТН або трек-номер",
+        "saveTracking": "Зберегти ТТН",
+        "savingTracking": "Зберігаємо…",
+        "savedTracking": "Номер збережено",
+        "savedTrackingFailed": "Не вдалося зберегти номер",
+        "itemsHeading": "Пазли",
+        "itemRentalDays": "{days} дн.",
+        "itemPricePerDay": "Ціна / день",
+        "itemDeposit": "Застава",
+        "itemSubtotal": "Сума",
+        "summaryHeading": "Підсумок",
+        "rentalSubtotal": "Сума оренди",
+        "deposit": "Застава",
+        "total": "Разом",
+        "paymentsHeading": "Платежі",
+        "paymentsEmpty": "Платежів ще немає.",
+        "paymentType": "Тип",
+        "paymentStatus": "Статус",
+        "paymentAmount": "Сума",
+        "paymentInvoice": "Інвойс",
+        "paymentRef": "Ref",
+        "paymentDate": "Дата",
+        "notesHeading": "Внутрішні нотатки",
+        "notesDescription": "Бачить лише адміністрація.",
+        "notesPlaceholder": "Додайте коментар для команди…",
+        "saveNotes": "Зберегти нотатки",
+        "savingNotes": "Зберігаємо…",
+        "savedNotes": "Нотатки збережено",
+        "savedNotesFailed": "Не вдалося зберегти нотатки",
+        "transitionsHeading": "Зміна статусу",
+        "transitionsEmpty": "Замовлення знаходиться у фінальному статусі.",
+        "transitionConfirm": "Перевести у {status}",
+        "transitionShippedNeedsTracking": "Спочатку вкажіть номер відстеження.",
+        "transitionApplying": "Оновлюємо…",
+        "transitionFailed": "Не вдалося оновити статус"
+      },
+      "paymentType": {
+        "RENTAL": "Оренда",
+        "DEPOSIT_HOLD": "Застава"
+      },
+      "paymentStatus": {
+        "PENDING": "Очікує",
+        "SUCCESS": "Успіх",
+        "FAILURE": "Помилка",
+        "REVERSED": "Повернуто"
+      }
     },
     "puzzles": {
       "title": "Пазли",

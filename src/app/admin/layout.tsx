@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
-import { Puzzle as PuzzleIcon } from "lucide-react";
+import { Package, Puzzle as PuzzleIcon } from "lucide-react";
 import { auth } from "@/auth";
 import { AdminSidebar } from "@/components/admin/AdminSidebar";
 import { Toaster } from "@/components/ui/toaster";
@@ -25,6 +25,7 @@ export default async function AdminLayout({
 
   const navItems = [
     { href: "/admin/puzzles", label: t("nav.puzzles"), icon: PuzzleIcon },
+    { href: "/admin/orders", label: t("nav.orders"), icon: Package },
   ];
 
   return (

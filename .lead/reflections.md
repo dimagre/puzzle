@@ -26,6 +26,12 @@ fullstack-dev delivered a comprehensive PR (19 files, 1871 insertions) covering 
 
 **Pattern:** when specialists branch from a point where `.lead/` files differ from current main, their PR can inadvertently carry those diffs. Worth noting in future specs: "Do not modify files under `.lead/`." Adding this as a standing constraint will prevent the issue without needing a review round.
 
+## 2026-05-22 — PUZ-16 Monobank payment integration
+
+fullstack-dev delivered a solid PR (15 files, 1143 insertions) covering the full payment flow. Two review rounds needed: first round caught `.lead/` file contamination (same pattern as PUZ-17), second was a rebase after main advanced. Both fixed cleanly — the rebase was done promptly this time (no pipeline stall). Code quality was high: serializable transaction to prevent double-payment race, webhook verifies via Monobank status API rather than trusting callback body, proper Zod validation on all endpoints.
+
+**Pattern:** the `.lead/` contamination keeps recurring despite the constraint being in every spec. The fix is working (agents revert when asked), but it costs a review round each time. This is acceptable overhead — the alternative (pre-commit hook) would require infra changes disproportionate to the problem.
+
 ## 2026-05-22 — Pipeline stall after PUZ-15 merge
 
 PUZ-15 was merged to main but the next task (PUZ-16 Monobank) was never specced or assigned. The owner had to intervene twice to point out the pipeline wasn't flowing. Root cause: I treated "merge PR" as the end of my responsibility for that batch, instead of immediately triggering the next task in the dependency chain.

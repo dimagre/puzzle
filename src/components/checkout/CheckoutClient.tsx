@@ -181,7 +181,30 @@ export function CheckoutClient({
 
       const body = (await res.json()) as { orderId: string };
       clearCart();
-      router.push(`/checkout/success?orderId=${encodeURIComponent(body.orderId)}`);
+
+      const paymentRes = await fetch("/api/payments/create", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ orderId: body.orderId }),
+      });
+
+      if (!paymentRes.ok) {
+        toast({
+          title: t("toast.paymentFailedTitle"),
+          description: await readErrorMessage(
+            paymentRes,
+            t("toast.paymentFailedDescription"),
+          ),
+          variant: "destructive",
+        });
+        router.push(
+          `/checkout/payment-result?orderId=${encodeURIComponent(body.orderId)}&error=init`,
+        );
+        return;
+      }
+
+      const paymentBody = (await paymentRes.json()) as { paymentUrl: string };
+      window.location.assign(paymentBody.paymentUrl);
     } catch {
       toast({
         title: t("toast.failedTitle"),

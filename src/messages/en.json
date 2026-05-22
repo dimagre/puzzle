@@ -55,6 +55,24 @@
       "1000-2000": "1000–2000 pieces",
       "2000+": "2000+ pieces"
     },
-    "conditionAll": "Any condition"
+    "conditionAll": "Any condition",
+    "search": "Search",
+    "searchPlaceholder": "Puzzle name...",
+    "availability": "Availability",
+    "availabilityAll": "All",
+    "availabilityYes": "Available",
+    "availabilityNo": "Unavailable",
+    "unavailable": "Unavailable",
+    "sort": "Sort",
+    "sortNewest": "Newest",
+    "sortPopular": "Most popular",
+    "sortPriceAsc": "Price: low to high",
+    "sortPriceDesc": "Price: high to low",
+    "resultsCount": "puzzles",
+    "errorLoading": "Failed to load puzzles. Please try again.",
+    "pagination": "Page navigation",
+    "paginationPrev": "Previous",
+    "paginationNext": "Next",
+    "paginationOf": "Page {page} of {totalPages}"
   }
 }

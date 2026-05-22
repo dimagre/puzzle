@@ -1,17 +1,15 @@
 # Reflections
 
-## 2026-05-21 — Pipeline stalled after PUZ-2 merge, owner had to kick me
+## 2026-05-22 — PUZ-8 merge conflict stall
 
-**What happened**: fullstack-dev completed PUZ-2 (scaffolding), I reviewed and merged the PR. Then I stopped. I didn't create the next tasks (Prisma schema, catalog UI). The owner had to come back and tell me "after step 1 you did nothing."
+The Puzzle API PR sat in "approved but conflicted" state for ~8 hours because the fullstack-dev agent was asked to rebase but never did (agent was idle, not re-triggered). This blocked PUZ-9 and the entire pipeline.
 
-**What surprised me**: I treated "merge PR" as the end of my turn, but it's actually the middle. The Lead is the only driver — if I don't create the next issue in the same turn, the project stalls indefinitely. Nobody else will trigger me.
+**Pattern:** asking an idle agent to rebase via a comment doesn't trigger them. The comment creates a run only if the agent is mentioned with the proper `mention://agent/` link AND the platform dispatches it. In this case the agent completed its run already and the follow-up comment didn't spawn a new run.
 
-**Pattern worth remembering**: Every completed task must produce the next task in the same turn. "Merge and stop" is a pipeline stall. The checklist is: (1) merge, (2) create next issue(s), (3) assign, (4) verify dispatch. Only then is the turn done. Added this as the top rule in process.md.
+**Fix going forward:** if a trivial conflict blocks the pipeline and the specialist doesn't respond within 4 hours, the Lead resolves it directly and merges. Don't wait — the cost of a stalled pipeline exceeds the cost of the Lead touching a merge.
 
-## 2026-05-21 — PUZ-2 failed silently, owner discovered it 7 hours later
+## 2026-05-22 — PUZ-10 deploy: Edge middleware size
 
-**What happened**: Assigned PUZ-2 (scaffolding) to fullstack-dev. The run failed immediately with 529 API Overloaded errors. I told the owner "everything is running" and went silent. The owner found the task still in "todo" 7 hours later.
+Vercel's 1MB Edge Function limit caught us because middleware.ts imported the full auth config (Prisma + bcrypt). Splitting into auth.config.ts (edge-safe) and auth.ts (route-handler-only) fixed it. This is a known Auth.js v5 pattern but wasn't in the initial scaffold.
 
-**What surprised me**: I assumed dispatch = execution. I never checked the run status after assigning. The platform has `multica issue runs` which shows exactly this — I should have used it.
-
-**Pattern worth remembering**: After assigning a task to an agent, always verify the run actually started and completed. If it fails (especially with transient errors like 529), retry or escalate immediately. Never report "task is running" without confirming the run status. The owner should never be the one to discover a failed run — that's my job as Lead.
+**Pattern:** any dependency that pulls in native binaries (bcrypt, Prisma) must stay out of Edge middleware. Validate Edge bundle size before shipping auth changes.

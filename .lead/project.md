@@ -1,53 +1,40 @@
-# PuzzleShare
+# PuzzleShare (ukraone.com.ua)
 
-## What We're Building
-
-Web platform for renting, exchanging, and giving away jigsaw puzzles. Warehouse in Kyiv, delivery via Nova Poshta / Ukrposhta across Ukraine.
+## What
+Web platform for renting and exchanging jigsaw puzzles in Ukraine. Admin-managed inventory — users browse a catalog, rent puzzles for N days, pay online, receive via Nova Poshta / Ukrposhta / self-pickup.
 
 ## Target User
-
-- **Primary**: Puzzle enthusiasts in Ukraine who want access to variety without buying every puzzle (rent, exchange, get free ones)
-- **Secondary**: Admin/operator managing inventory from a Kyiv warehouse
+Puzzle enthusiasts in Ukraine who want variety without buying every puzzle. Initially Kyiv-area, expanding later.
 
 ## Problem
-
-Puzzles are expensive, take up space, and are typically assembled once. There's no convenient service in Ukraine for renting or exchanging them affordably with nationwide delivery.
+Puzzles are expensive, take up space, and lose replay value after assembly. No convenient rental service exists in Ukraine.
 
 ## Success Metrics
+- Live staging by end of May 2026
+- First real order within 2 weeks of production launch
+- 50+ puzzles in catalog at launch
 
-- TBD by owner (suggested: active rentals/month, user retention, catalog size, order fulfillment time)
-
-## Tech Stack (owner-specified)
-
-- Next.js 14 (App Router)
-- TypeScript (strict)
-- Prisma + PostgreSQL
-- Tailwind CSS + shadcn/ui
-- Color scheme: "Sage & Cream" — Primary #5B8C5A, Secondary #F5F0E8, Accent #D4956A
-- Sharp (image optimization)
-- Auth.js v5 (Credentials provider, email/password)
-- Monobank Acquiring API (payments + hold for deposits)
-- Vercel Blob (dev) -> local/R2 (prod) for image storage
-- Vercel (dev) -> ukraone.com.ua (prod) for hosting
+## Tech Stack
+- Next.js 14 (App Router), TypeScript strict
+- Prisma + PostgreSQL (Neon for staging/prod)
+- Tailwind + shadcn/ui
+- Auth.js v5 (Credentials)
+- Vercel hosting
+- Monobank Acquiring (payments)
+- Nova Poshta / Ukrposhta APIs (delivery)
+- Domain: ukraone.com.ua
 
 ## Hard Constraints
+- Currency: UAH only
+- Bilingual: Ukrainian (default) + English
+- Mobile-first
+- Admin-only puzzle creation (no user uploads in MVP)
+- No free puzzles in MVP
+- Exchange: admin-managed only
 
-- Currency: UAH (₴) only
-- Delivery: Nova Poshta, Ukrposhta, self-pickup from warehouse (Kyiv), self-pickup from seller
-- Language: bilingual UI (Ukrainian / English) with switcher
-- Mobile-first responsive design
-- Admin-only puzzle creation (no user-generated listings)
-- Telegram notifications for orders
-- Payments: Monobank only (no LiqPay, no cash on delivery)
-- Deposit mechanism: Monobank hold (9-day pre-auth, auto-cancel if not finalized)
-- Free puzzles: deferred (not in MVP)
-- Exchange: admin-managed only (no user-to-user for now)
-
-## Current Phase
-
-Greenfield — repo exists but is empty. Moving from spec to implementation.
-
-## Cost Thresholds (defaults until owner sets)
-
+## Cost Thresholds (owner-set defaults)
 - Recurring: $20/month
 - One-time: $100
+
+## Current Phase
+Phase 1 (Foundation) nearly complete. Auth done, Puzzle API merged, catalog UI wired next. Staging deploy in progress on Vercel.

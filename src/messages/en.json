@@ -8,7 +8,95 @@
     "home": "Home",
     "catalog": "Catalog",
     "login": "Sign In",
-    "admin": "Admin"
+    "admin": "Admin",
+    "profile": "My profile"
+  },
+  "profile": {
+    "title": "My profile",
+    "subtitle": "Manage your details and review your order history.",
+    "info": {
+      "heading": "Personal info",
+      "description": "Used for rentals and delivery.",
+      "name": "Name",
+      "email": "Email",
+      "emailHint": "Email cannot be changed.",
+      "phone": "Phone",
+      "phoneHint": "Ukrainian mobile in format +380XXXXXXXXX",
+      "deliveryHeading": "Delivery address",
+      "deliveryHint": "Nova Poshta details. Currently entered manually.",
+      "region": "Region",
+      "city": "City",
+      "warehouse": "Warehouse / parcel locker",
+      "warehouseHint": "Example: \"Warehouse #12 (22 Khreschatyk St.)\"",
+      "save": "Save changes",
+      "saving": "Saving…",
+      "toast": {
+        "saved": "Changes saved",
+        "failed": "Save failed"
+      }
+    },
+    "password": {
+      "heading": "Change password",
+      "description": "Update the password used to sign in.",
+      "current": "Current password",
+      "new": "New password",
+      "confirm": "Confirm new password",
+      "hint": "At least 8 characters.",
+      "save": "Change password",
+      "saving": "Saving…",
+      "toast": {
+        "changed": "Password updated",
+        "failed": "Could not change password"
+      }
+    },
+    "validation": {
+      "nameRequired": "Enter a name",
+      "phoneInvalid": "Invalid phone. Example: +380501234567",
+      "currentPasswordRequired": "Enter the current password",
+      "currentPasswordInvalid": "Current password is incorrect",
+      "passwordTooShort": "Password must be at least 8 characters",
+      "passwordsMustMatch": "Passwords do not match"
+    },
+    "orders": {
+      "heading": "Order history",
+      "description": "Your recent orders. Tap one to see details.",
+      "total": "Total",
+      "itemCount": "{count, plural, one {# puzzle} other {# puzzles}}",
+      "empty": {
+        "title": "No orders yet",
+        "description": "Once you rent your first puzzle, it shows up here.",
+        "cta": "Browse the catalog"
+      }
+    },
+    "orderDetail": {
+      "title": "Order #{id}",
+      "back": "Back to profile",
+      "itemsHeading": "Puzzles",
+      "itemMeta": "{days} d × {price}",
+      "summaryHeading": "Summary",
+      "itemsTotal": "Rental subtotal",
+      "deposit": "Deposit",
+      "total": "Total due",
+      "delivery": "Delivery method",
+      "trackingNumber": "Tracking number",
+      "trackingNotSet": "Not yet assigned",
+      "notFoundTitle": "Order not found",
+      "notFoundDescription": "This order does not exist or does not belong to you."
+    }
+  },
+  "orderStatus": {
+    "PENDING": "Pending",
+    "CONFIRMED": "Confirmed",
+    "SHIPPED": "Shipped",
+    "DELIVERED": "Delivered",
+    "RETURNED": "Returned",
+    "CANCELLED": "Cancelled"
+  },
+  "deliveryMethod": {
+    "NOVA_POSHTA": "Nova Poshta",
+    "UKRPOSHTA": "Ukrposhta",
+    "SELF_PICKUP_WAREHOUSE": "Pickup from warehouse",
+    "SELF_PICKUP_SELLER": "Pickup from seller"
   },
   "catalog": {
     "title": "Puzzle Catalog",

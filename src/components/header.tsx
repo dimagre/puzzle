@@ -9,6 +9,7 @@ export async function Header() {
   const cookieStore = await cookies();
   const locale = cookieStore.get("locale")?.value ?? "uk";
   const session = await auth();
+  const isLoggedIn = !!session?.user?.id;
   const isAdmin = session?.user?.role === "ADMIN";
 
   return (
@@ -27,7 +28,17 @@ export async function Header() {
             </Link>
           ) : null}
         </div>
-        <LanguageSwitcher currentLocale={locale} />
+        <div className="flex items-center gap-4">
+          {isLoggedIn ? (
+            <Link
+              href="/profile"
+              className="text-sm font-medium text-sage hover:text-sage/80"
+            >
+              {t("nav.profile")}
+            </Link>
+          ) : null}
+          <LanguageSwitcher currentLocale={locale} />
+        </div>
       </div>
     </header>
   );

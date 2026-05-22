@@ -8,7 +8,8 @@
     "home": "Home",
     "catalog": "Catalog",
     "login": "Sign In",
-    "admin": "Admin"
+    "admin": "Admin",
+    "cart": "Cart"
   },
   "catalog": {
     "title": "Puzzle Catalog",
@@ -86,6 +87,7 @@
     "available": "Available",
     "unavailable": "Unavailable",
     "rent": "Rent",
+    "alreadyInCart": "Already in cart",
     "comingSoon": "Coming soon",
     "condition": "Condition",
     "type": "Type",
@@ -111,6 +113,25 @@
       "FLOOR": "Floor",
       "EDUCATIONAL": "Educational"
     }
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "emptyDescription": "Browse our catalog and add puzzles to rent.",
+    "browseCatalog": "Browse Catalog",
+    "rentalDays": "Rental days",
+    "pieces": "{count} pieces",
+    "perDay": "/day",
+    "rentalSubtotal": "Rental subtotal",
+    "depositSubtotal": "Deposit subtotal",
+    "grandTotal": "Grand total",
+    "remove": "Remove",
+    "addedToCart": "Added to cart",
+    "addedToCartDescription": "{title} has been added to your cart.",
+    "alreadyInCart": "Already in cart",
+    "rentNow": "Rent",
+    "deposit": "Deposit",
+    "days": "{count} days"
   },
   "admin": {
     "nav": {

@@ -8,7 +8,8 @@
     "home": "Головна",
     "catalog": "Каталог",
     "login": "Увійти",
-    "admin": "Адмін"
+    "admin": "Адмін",
+    "cart": "Кошик"
   },
   "catalog": {
     "title": "Каталог пазлів",
@@ -86,6 +87,7 @@
     "available": "Доступний",
     "unavailable": "Недоступний",
     "rent": "Орендувати",
+    "alreadyInCart": "Вже в кошику",
     "comingSoon": "Незабаром",
     "condition": "Стан",
     "type": "Тип",
@@ -111,6 +113,25 @@
       "FLOOR": "Підлоговий",
       "EDUCATIONAL": "Навчальний"
     }
+  },
+  "cart": {
+    "title": "Ваш кошик",
+    "empty": "Кошик порожній",
+    "emptyDescription": "Перегляньте каталог і додайте пазли для оренди.",
+    "browseCatalog": "До каталогу",
+    "rentalDays": "Днів оренди",
+    "pieces": "{count} деталей",
+    "perDay": "/день",
+    "rentalSubtotal": "Сума оренди",
+    "depositSubtotal": "Сума застави",
+    "grandTotal": "Разом",
+    "remove": "Видалити",
+    "addedToCart": "Додано до кошика",
+    "addedToCartDescription": "{title} додано до вашого кошика.",
+    "alreadyInCart": "Вже в кошику",
+    "rentNow": "Орендувати",
+    "deposit": "Застава",
+    "days": "{count} днів"
   },
   "admin": {
     "nav": {

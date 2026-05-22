@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { cookies } from "next/headers";
 import { auth } from "@/auth";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { CartIcon } from "@/components/cart-icon";
 
 export async function Header() {
   const t = await getTranslations();
@@ -15,7 +16,7 @@ export async function Header() {
     <header className="border-b border-gray-200 bg-white">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <div className="flex items-center gap-6">
-          <Link href="/" className="text-xl font-bold text-sage">
+          <Link href="/" className="text-xl font-bold text-sage focus:outline-none focus-visible:ring-2 focus-visible:ring-sage rounded-lg">
             {t("common.title")}
           </Link>
           {isAdmin ? (
@@ -27,7 +28,10 @@ export async function Header() {
             </Link>
           ) : null}
         </div>
-        <LanguageSwitcher currentLocale={locale} />
+        <div className="flex items-center gap-3">
+          <CartIcon />
+          <LanguageSwitcher currentLocale={locale} />
+        </div>
       </div>
     </header>
   );

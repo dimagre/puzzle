@@ -13,3 +13,4 @@
 - **PUZ-8 merged by Lead:** fullstack-dev did not rebase after conflicts; Lead resolved conflicts and merged directly to unblock pipeline. Going forward: if a rebase request goes unanswered for >4h, Lead resolves it.
 - **PUZ-9 assigned to ui-dev:** catalog wiring is unblocked now that API is on main.
 - **PUZ-1, PUZ-6 closed:** bootstrap and roadmap tasks complete.
+- **PUZ-11 merged:** puzzle detail page (gallery, metadata, rent button). PR #10 by ui-dev, fast-forward merged after review. One minor a11y note logged (hardcoded English aria-labels on lightbox arrows) — non-blocking, deferred.

@@ -14,3 +14,8 @@
 - **PUZ-9 assigned to ui-dev:** catalog wiring is unblocked now that API is on main.
 - **PUZ-1, PUZ-6 closed:** bootstrap and roadmap tasks complete.
 - **PUZ-11 merged:** puzzle detail page (gallery, metadata, rent button). PR #10 by ui-dev, fast-forward merged after review. One minor a11y note logged (hardcoded English aria-labels on lightbox arrows) — non-blocking, deferred.
+- **PUZ-12 merged (PR #12):** admin puzzle CRUD UI — squash-merged after review. Server-side auth guard, zod validation, i18n, image uploader with drag-and-drop. All acceptance criteria met.
+- **PR #4 closed:** stale/superseded — catalog feature already merged via PR #6.
+- **PR #8 closed:** stale — PUZ-8 already merged to main earlier via direct merge.
+- **PUZ-13 (PR #11) blocked on rebase:** merge conflicts with main after PUZ-12 merge. Requested fullstack-dev to rebase.
+- **PUZ-36 created:** GitHub Actions workflow to extract Vercel preview URLs from bot comments and post clean PR comment. Assigned to fullstack-dev. Owner approved Option A (event-driven workflow over polling).

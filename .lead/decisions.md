@@ -20,3 +20,4 @@
 - **PUZ-13 (PR #11) blocked on rebase:** merge conflicts with main after PUZ-12 merge. Requested fullstack-dev to rebase.
 - **PUZ-36 created:** GitHub Actions workflow to extract Vercel preview URLs from bot comments and post clean PR comment. Assigned to fullstack-dev. Owner approved Option A (event-driven workflow over polling).
 - **Phase 2 started:** owner requested "давай починати фазу 2". Batch 1: PUZ-14 (Cart → ui-dev) + PUZ-17 (User profile → fullstack-dev) in parallel. Cart is localStorage-only (no schema change). Profile uses existing User fields. Next batch after these merge: PUZ-15 (Checkout).
+- **PUZ-17 merged (PR #16):** user profile page with order history. Squash-merged after one review round (specialist had accidentally modified .lead/ files; fixed with a revert commit, no force-push).

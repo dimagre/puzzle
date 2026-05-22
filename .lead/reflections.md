@@ -19,3 +19,9 @@ Vercel's 1MB Edge Function limit caught us because middleware.ts imported the fu
 ui-dev delivered a clean PR in ~6 minutes of wall time after assignment. All 10 acceptance criteria met on first submission — no revision rounds needed. The spec was detailed enough (explicit component breakdown, constraints on shadcn usage, Server vs Client Component split) that the agent had no ambiguity.
 
 **Pattern:** highly specific specs with explicit architectural constraints (which components are Server vs Client, which library to use for each UI element) eliminate revision rounds. The upfront cost of a thorough spec pays for itself in zero back-and-forth.
+
+## 2026-05-22 — PUZ-17 user profile
+
+fullstack-dev delivered a comprehensive PR (19 files, 1871 insertions) covering profile CRUD, password change, and order history — all acceptance criteria met. One review round needed: the PR accidentally included stale versions of `.lead/decisions.md` and `.lead/project.md`. The agent fixed it cleanly with a revert commit (no force-push, respecting repo policy).
+
+**Pattern:** when specialists branch from a point where `.lead/` files differ from current main, their PR can inadvertently carry those diffs. Worth noting in future specs: "Do not modify files under `.lead/`." Adding this as a standing constraint will prevent the issue without needing a review round.

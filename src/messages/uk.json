@@ -6,6 +6,546 @@
   },
   "nav": {
     "home": "Головна",
-    "login": "Увійти"
+    "catalog": "Каталог",
+    "login": "Увійти",
+    "admin": "Адмін",
+    "profile": "Мій профіль",
+    "cart": "Кошик"
+  },
+  "cart": {
+    "title": "Ваш кошик",
+    "empty": "Кошик порожній",
+    "emptyDescription": "Перегляньте каталог і додайте пазли для оренди.",
+    "browseCatalog": "Переглянути каталог",
+    "rentalDays": "Днів оренди",
+    "rentalSubtotal": "Сума оренди",
+    "depositSubtotal": "Сума застави",
+    "grandTotal": "Загальна сума",
+    "remove": "Видалити",
+    "pieces": "деталей",
+    "perDay": "/день",
+    "deposit": "Застава",
+    "days": "днів",
+    "addToCart": "Орендувати",
+    "alreadyInCart": "Вже в кошику",
+    "addedToCart": "Додано до кошика",
+    "addedToCartDescription": "{title} додано до вашого кошика.",
+    "proceedToCheckout": "Оформити замовлення"
+  },
+  "checkout": {
+    "title": "Оформлення замовлення",
+    "subtitle": "Оберіть спосіб доставки та вкажіть контактні дані.",
+    "emptyTitle": "Кошик порожній",
+    "emptyDescription": "Перш ніж оформити замовлення, додайте хоча б один пазл.",
+    "delivery": {
+      "heading": "Спосіб доставки",
+      "description": "Оберіть, як хочете отримати пазли."
+    },
+    "address": {
+      "region": "Область",
+      "city": "Місто",
+      "warehouse": "Відділення / поштомат Нової Пошти",
+      "warehouseHint": "Наприклад: «Відділення №12 (вул. Хрещатик, 22)»",
+      "street": "Вулиця та номер будинку",
+      "postalCode": "Поштовий індекс",
+      "pickupWarehouse": "Адреса складу",
+      "pickupSeller": "Адреса продавця",
+      "pickupNotConfigured": "Адресу буде надіслано після підтвердження замовлення."
+    },
+    "contact": {
+      "heading": "Контактні дані",
+      "description": "Цей телефон зателефонує менеджер для підтвердження.",
+      "name": "Імʼя",
+      "phone": "Телефон",
+      "phoneHint": "Український мобільний у форматі +380XXXXXXXXX"
+    },
+    "summary": {
+      "heading": "Ваше замовлення",
+      "itemMeta": "{days} дн. × {price}",
+      "deposit": "Застава",
+      "rentalSubtotal": "Сума оренди",
+      "depositSubtotal": "Сума застави",
+      "grandTotal": "Разом до сплати",
+      "unavailable": "Більше не доступний"
+    },
+    "submit": "Перейти до оплати",
+    "submitting": "Створюємо замовлення…",
+    "submitHint": "Після створення замовлення вас буде перенаправлено на сторінку оплати Monobank.",
+    "validation": {
+      "fieldRequired": "Поле обовʼязкове",
+      "nameRequired": "Введіть імʼя",
+      "phoneInvalid": "Неправильний формат телефону. Приклад: +380501234567",
+      "regionRequired": "Введіть область",
+      "cityRequired": "Введіть місто",
+      "warehouseRequired": "Введіть номер відділення",
+      "streetRequired": "Введіть вулицю та номер будинку",
+      "postalCodeRequired": "Введіть поштовий індекс"
+    },
+    "toast": {
+      "failedTitle": "Не вдалося створити замовлення",
+      "failedDescription": "Спробуйте ще раз.",
+      "unavailableTitle": "Деякі пазли вже недоступні",
+      "unavailableDescription": "Перегляньте кошик і приберіть позначені позиції.",
+      "paymentFailedTitle": "Не вдалося ініціювати оплату",
+      "paymentFailedDescription": "Замовлення створено, але платіжна сторінка недоступна. Спробуйте ще раз."
+    },
+    "paymentResult": {
+      "pendingTitle": "Перевіряємо оплату",
+      "pendingDescription": "Зачекайте, поки ми отримаємо підтвердження від банку.",
+      "processingTitle": "Платіж в обробці",
+      "processingDescription": "Це може зайняти декілька хвилин. Ми оновимо статус замовлення, щойно отримаємо відповідь.",
+      "redirecting": "Перенаправляємо…",
+      "redirectingDescription": "Готуємо сторінку підтвердження.",
+      "failureTitle": "Оплату не завершено",
+      "failureDescription": "Платіж не пройшов або був скасований. Замовлення збережено — спробуйте оплатити ще раз.",
+      "errorInit": "Не вдалося створити платіжну сесію. Спробуйте ще раз.",
+      "errorLookup": "Не вдалося оновити статус. Спробуйте ще раз.",
+      "retry": "Спробувати ще раз",
+      "retrying": "Створюємо платіж…",
+      "backToCart": "Повернутися до кошика",
+      "viewOrders": "Мої замовлення",
+      "continueBrowsing": "До каталогу"
+    },
+    "success": {
+      "title": "Замовлення прийнято",
+      "description": "Дякуємо! Ми звʼяжемося з вами для підтвердження.",
+      "orderNumber": "Номер замовлення",
+      "placedAt": "Створено",
+      "delivery": "Спосіб доставки",
+      "rentalSubtotal": "Сума оренди",
+      "deposit": "Застава",
+      "grandTotal": "Разом",
+      "viewOrders": "Мої замовлення",
+      "continueBrowsing": "До каталогу",
+      "orderNotFound": "Замовлення створено, але деталі недоступні."
+    }
+  },
+  "profile": {
+    "title": "Мій профіль",
+    "subtitle": "Керуйте своїми даними та переглядайте історію замовлень.",
+    "info": {
+      "heading": "Особисті дані",
+      "description": "Ці дані використовуються для оформлення оренди та доставки.",
+      "name": "Імʼя",
+      "email": "Email",
+      "emailHint": "Email змінити не можна.",
+      "phone": "Телефон",
+      "phoneHint": "Український мобільний у форматі +380XXXXXXXXX",
+      "deliveryHeading": "Адреса доставки",
+      "deliveryHint": "Дані Нової Пошти. Поки що вводяться вручну.",
+      "region": "Область",
+      "city": "Місто",
+      "warehouse": "Відділення / поштомат",
+      "warehouseHint": "Наприклад: «Відділення №12 (вул. Хрещатик, 22)»",
+      "save": "Зберегти зміни",
+      "saving": "Зберігаємо…",
+      "toast": {
+        "saved": "Зміни збережено",
+        "failed": "Не вдалося зберегти"
+      }
+    },
+    "password": {
+      "heading": "Зміна пароля",
+      "description": "Оновіть пароль для входу до акаунта.",
+      "current": "Поточний пароль",
+      "new": "Новий пароль",
+      "confirm": "Підтвердіть новий пароль",
+      "hint": "Мінімум 8 символів.",
+      "save": "Змінити пароль",
+      "saving": "Зберігаємо…",
+      "toast": {
+        "changed": "Пароль оновлено",
+        "failed": "Не вдалося змінити пароль"
+      }
+    },
+    "validation": {
+      "nameRequired": "Введіть імʼя",
+      "phoneInvalid": "Неправильний формат телефону. Приклад: +380501234567",
+      "currentPasswordRequired": "Введіть поточний пароль",
+      "currentPasswordInvalid": "Поточний пароль неправильний",
+      "passwordTooShort": "Пароль має містити щонайменше 8 символів",
+      "passwordsMustMatch": "Паролі не збігаються"
+    },
+    "orders": {
+      "heading": "Історія замовлень",
+      "description": "Останні замовлення. Натисніть на замовлення для перегляду деталей.",
+      "total": "Загалом",
+      "itemCount": "{count, plural, one {# пазл} few {# пазли} many {# пазлів} other {# пазлів}}",
+      "empty": {
+        "title": "Замовлень ще немає",
+        "description": "Орендуйте перший пазл — і він зʼявиться тут.",
+        "cta": "До каталогу"
+      }
+    },
+    "orderDetail": {
+      "title": "Замовлення #{id}",
+      "back": "Назад до профілю",
+      "itemsHeading": "Пазли",
+      "itemMeta": "{days} дн. × {price}",
+      "summaryHeading": "Підсумок",
+      "itemsTotal": "Сума оренди",
+      "deposit": "Застава",
+      "total": "Разом до сплати",
+      "delivery": "Спосіб доставки",
+      "trackingNumber": "Номер відстеження",
+      "trackingNotSet": "Ще не призначено",
+      "notFoundTitle": "Замовлення не знайдено",
+      "notFoundDescription": "Замовлення не існує або не належить вам."
+    }
+  },
+  "orderStatus": {
+    "PENDING": "Очікує підтвердження",
+    "CONFIRMED": "Підтверджено",
+    "SHIPPED": "Відправлено",
+    "DELIVERED": "Доставлено",
+    "RETURNED": "Повернуто",
+    "CANCELLED": "Скасовано"
+  },
+  "deliveryMethod": {
+    "NOVA_POSHTA": "Нова Пошта",
+    "UKRPOSHTA": "Укрпошта",
+    "SELF_PICKUP_WAREHOUSE": "Самовивіз зі складу",
+    "SELF_PICKUP_SELLER": "Самовивіз від продавця"
+  },
+  "catalog": {
+    "title": "Каталог пазлів",
+    "subtitle": "Знайдіть ідеальний пазл для оренди",
+    "filters": "Фільтри",
+    "filtersOpen": "Відкрити фільтри",
+    "filtersClose": "Закрити фільтри",
+    "filtersApply": "Застосувати",
+    "filtersClear": "Скинути",
+    "category": "Категорія",
+    "pieceCount": "Кількість деталей",
+    "condition": "Стан",
+    "type": "Тип",
+    "rent": "Орендувати",
+    "perDay": "₴/день",
+    "pieces": "дет.",
+    "emptyTitle": "Пазлів не знайдено",
+    "emptyDescription": "Спробуйте змінити фільтри або скинути їх",
+    "loading": "Завантаження...",
+    "categories": {
+      "landscape": "Пейзажі",
+      "animals": "Тварини",
+      "art": "Мистецтво",
+      "cities": "Міста",
+      "fantasy": "Фентезі",
+      "abstract": "Абстракція"
+    },
+    "conditions": {
+      "new": "Новий",
+      "excellent": "Відмінний",
+      "good": "Хороший",
+      "fair": "Задовільний"
+    },
+    "types": {
+      "all": "Всі типи",
+      "standard": "Стандартний",
+      "panoramic": "Панорамний",
+      "shaped": "Фігурний",
+      "3d": "3D"
+    },
+    "pieceRanges": {
+      "all": "Будь-яка кількість",
+      "100-500": "100–500 деталей",
+      "500-1000": "500–1000 деталей",
+      "1000-2000": "1000–2000 деталей",
+      "2000+": "2000+ деталей"
+    },
+    "conditionAll": "Будь-який стан",
+    "search": "Пошук",
+    "searchPlaceholder": "Назва пазлу...",
+    "availability": "Наявність",
+    "availabilityAll": "Всі",
+    "availabilityYes": "Доступні",
+    "availabilityNo": "Недоступні",
+    "unavailable": "Недоступно",
+    "sort": "Сортування",
+    "sortNewest": "Новинки",
+    "sortPopular": "Популярні",
+    "sortPriceAsc": "Ціна: від низької",
+    "sortPriceDesc": "Ціна: від високої",
+    "resultsCount": "пазлів",
+    "errorLoading": "Не вдалося завантажити пазли. Спробуйте ще раз.",
+    "pagination": "Навігація по сторінках",
+    "paginationPrev": "Назад",
+    "paginationNext": "Вперед",
+    "paginationOf": "Сторінка {page} з {totalPages}"
+  },
+  "puzzleDetail": {
+    "breadcrumbHome": "Головна",
+    "breadcrumbCatalog": "Каталог",
+    "pieces": "деталей",
+    "pricePerDay": "₴/день",
+    "deposit": "Застава",
+    "depositAmount": "₴",
+    "available": "Доступний",
+    "unavailable": "Недоступний",
+    "rent": "Орендувати",
+    "comingSoon": "Незабаром",
+    "condition": "Стан",
+    "type": "Тип",
+    "category": "Категорія",
+    "description": "Опис",
+    "gallery": "Галерея зображень",
+    "imageAlt": "Зображення пазлу",
+    "thumbnailAlt": "Мініатюра {index}",
+    "openLightbox": "Відкрити зображення на повний екран",
+    "closeLightbox": "Закрити",
+    "notFound": "Пазл не знайдено",
+    "notFoundDescription": "Пазл з таким ID не існує або був видалений.",
+    "backToCatalog": "Повернутися до каталогу",
+    "conditions": {
+      "new": "Новий",
+      "excellent": "Відмінний",
+      "good": "Хороший",
+      "fair": "Задовільний"
+    },
+    "types": {
+      "CLASSIC": "Класичний",
+      "THREE_D": "3D",
+      "FLOOR": "Підлоговий",
+      "EDUCATIONAL": "Навчальний"
+    }
+  },
+  "admin": {
+    "nav": {
+      "heading": "Адмін",
+      "puzzles": "Пазли",
+      "orders": "Замовлення"
+    },
+    "orders": {
+      "title": "Замовлення",
+      "subtitle": "Всього: {total}",
+      "empty": {
+        "title": "Замовлень поки немає",
+        "description": "Щойно клієнти зроблять перші замовлення, вони з'являться тут."
+      },
+      "filters": {
+        "search": "Клієнт",
+        "searchPlaceholder": "Імʼя або email…",
+        "status": "Статус",
+        "statusAll": "Усі статуси",
+        "from": "Від",
+        "to": "До",
+        "apply": "Застосувати",
+        "reset": "Скинути"
+      },
+      "table": {
+        "id": "Замовлення",
+        "customer": "Клієнт",
+        "status": "Статус",
+        "delivery": "Доставка",
+        "total": "Сума",
+        "items": "Позиції",
+        "date": "Створено",
+        "view": "Переглянути"
+      },
+      "pagination": {
+        "label": "Навігація по сторінках",
+        "prev": "Назад",
+        "next": "Вперед",
+        "of": "Сторінка {page} з {totalPages}"
+      },
+      "detail": {
+        "back": "До списку замовлень",
+        "title": "Замовлення #{id}",
+        "createdAt": "Створено",
+        "updatedAt": "Оновлено",
+        "customerHeading": "Клієнт",
+        "customerName": "Імʼя",
+        "customerEmail": "Email",
+        "customerPhone": "Телефон",
+        "phoneNotSet": "—",
+        "deliveryHeading": "Доставка",
+        "deliveryMethod": "Спосіб",
+        "deliveryAddress": "Адреса",
+        "deliveryAddressNotSet": "Не вказано",
+        "trackingNumber": "Номер відстеження",
+        "trackingNotSet": "Не вказано",
+        "trackingPlaceholder": "Номер ТТН або трек-номер",
+        "saveTracking": "Зберегти ТТН",
+        "savingTracking": "Зберігаємо…",
+        "savedTracking": "Номер збережено",
+        "savedTrackingFailed": "Не вдалося зберегти номер",
+        "itemsHeading": "Пазли",
+        "itemRentalDays": "{days} дн.",
+        "itemPricePerDay": "Ціна / день",
+        "itemDeposit": "Застава",
+        "itemSubtotal": "Сума",
+        "summaryHeading": "Підсумок",
+        "rentalSubtotal": "Сума оренди",
+        "deposit": "Застава",
+        "total": "Разом",
+        "paymentsHeading": "Платежі",
+        "paymentsEmpty": "Платежів ще немає.",
+        "paymentType": "Тип",
+        "paymentStatus": "Статус",
+        "paymentAmount": "Сума",
+        "paymentInvoice": "Інвойс",
+        "paymentRef": "Ref",
+        "paymentDate": "Дата",
+        "notesHeading": "Внутрішні нотатки",
+        "notesDescription": "Бачить лише адміністрація.",
+        "notesPlaceholder": "Додайте коментар для команди…",
+        "saveNotes": "Зберегти нотатки",
+        "savingNotes": "Зберігаємо…",
+        "savedNotes": "Нотатки збережено",
+        "savedNotesFailed": "Не вдалося зберегти нотатки",
+        "transitionsHeading": "Зміна статусу",
+        "transitionsEmpty": "Замовлення знаходиться у фінальному статусі.",
+        "transitionConfirm": "Перевести у {status}",
+        "transitionShippedNeedsTracking": "Спочатку вкажіть номер відстеження.",
+        "transitionApplying": "Оновлюємо…",
+        "transitionFailed": "Не вдалося оновити статус"
+      },
+      "paymentType": {
+        "RENTAL": "Оренда",
+        "DEPOSIT_HOLD": "Застава"
+      },
+      "paymentStatus": {
+        "PENDING": "Очікує",
+        "SUCCESS": "Успіх",
+        "FAILURE": "Помилка",
+        "REVERSED": "Повернуто"
+      }
+    },
+    "puzzles": {
+      "title": "Пазли",
+      "subtitle": "Всього: {total}",
+      "create": "Додати пазл",
+      "createTitle": "Новий пазл",
+      "editTitle": "Редагувати «{title}»",
+      "backToList": "До списку пазлів",
+      "empty": {
+        "title": "Пазлів ще немає",
+        "description": "Додайте перший пазл, щоб він з'явився в каталозі."
+      },
+      "table": {
+        "image": "",
+        "title": "Назва",
+        "category": "Категорія",
+        "pieces": "Деталі",
+        "price": "Ціна / день",
+        "status": "Статус",
+        "actions": "",
+        "noImage": "—"
+      },
+      "actions": {
+        "edit": "Редагувати",
+        "delete": "Видалити"
+      },
+      "status": {
+        "available": "Доступний",
+        "unavailable": "Недоступний",
+        "hidden": "Прихований"
+      },
+      "filters": {
+        "search": "Пошук",
+        "searchPlaceholder": "Назва (uk або en)…",
+        "category": "Категорія",
+        "categoryAll": "Всі категорії",
+        "visibility": "Видимість",
+        "visibilityAll": "Усі",
+        "visibilityVisible": "Видимі",
+        "visibilityHidden": "Приховані",
+        "availability": "Наявність",
+        "availabilityAll": "Усі",
+        "availabilityYes": "Доступні",
+        "availabilityNo": "Недоступні",
+        "reset": "Скинути"
+      },
+      "pagination": {
+        "label": "Навігація по сторінках",
+        "prev": "Назад",
+        "next": "Вперед",
+        "of": "Сторінка {page} з {totalPages}"
+      },
+      "delete": {
+        "title": "Видалити пазл?",
+        "description": "«{title}» буде приховано з каталогу. Існуючі замовлення не зміняться.",
+        "cancel": "Скасувати",
+        "confirm": "Видалити",
+        "confirming": "Видаляємо…"
+      },
+      "toast": {
+        "deleted": "Пазл приховано",
+        "deleteFailed": "Не вдалося видалити пазл"
+      },
+      "condition": {
+        "NEW": "Новий",
+        "LIKE_NEW": "Як новий",
+        "GOOD": "Хороший",
+        "FAIR": "Задовільний"
+      },
+      "type": {
+        "CLASSIC": "Класичний",
+        "THREE_D": "3D",
+        "FLOOR": "Підлоговий",
+        "EDUCATIONAL": "Навчальний"
+      },
+      "form": {
+        "lang": {
+          "uk": "Українська",
+          "en": "Англійська"
+        },
+        "sections": {
+          "basics": "Основне",
+          "details": "Деталі",
+          "images": "Зображення",
+          "imagesDescription": "Перетягуйте, щоб змінити порядок. Перше зображення використовується в каталозі."
+        },
+        "fields": {
+          "titleUk": "Назва (uk)",
+          "titleEn": "Назва (en)",
+          "descriptionUk": "Опис (uk)",
+          "descriptionEn": "Опис (en)",
+          "category": "Категорія",
+          "pieceCount": "Кількість деталей",
+          "condition": "Стан",
+          "type": "Тип",
+          "rentalPricePerDay": "Ціна оренди за день",
+          "depositAmount": "Застава",
+          "isAvailable": "Доступний для оренди"
+        },
+        "placeholders": {
+          "category": "Оберіть категорію"
+        },
+        "hints": {
+          "uah": "У гривнях (₴)"
+        },
+        "actions": {
+          "cancel": "Скасувати",
+          "create": "Створити пазл",
+          "save": "Зберегти зміни",
+          "saving": "Збереження…"
+        },
+        "toast": {
+          "created": "Пазл створено",
+          "updated": "Пазл оновлено",
+          "failed": "Не вдалося зберегти"
+        },
+        "images": {
+          "dropzoneLabel": "Перетягніть зображення сюди",
+          "dropHere": "Перетягніть зображення сюди або",
+          "browse": "Обрати файли",
+          "uploading": "Завантаження…",
+          "hint": "До 20 зображень, до 5 МБ кожне",
+          "altUk": "Alt-текст (uk)",
+          "altEn": "Alt-текст (en)",
+          "position": "Позиція {n}",
+          "remove": "Видалити зображення",
+          "dragHandle": "Перетягніть, щоб змінити порядок",
+          "toast": {
+            "uploaded": "Зображення завантажено",
+            "uploadedMock": "Зображення додано (попередній перегляд)",
+            "uploadedMockDescription": "Сервіс завантаження ще не задеплоєно — використовуємо локальний попередній перегляд. Файли буде перезавантажено, щойно сервіс запрацює.",
+            "uploadFailed": "Не вдалося завантажити",
+            "tooMany": "Максимум 20 зображень на пазл"
+          }
+        }
+      }
+    }
   }
 }

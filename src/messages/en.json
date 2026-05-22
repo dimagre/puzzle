@@ -6,6 +6,546 @@
   },
   "nav": {
     "home": "Home",
-    "login": "Sign In"
+    "catalog": "Catalog",
+    "login": "Sign In",
+    "admin": "Admin",
+    "profile": "My profile",
+    "cart": "Cart"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "emptyDescription": "Browse our catalog and add puzzles to rent.",
+    "browseCatalog": "Browse Catalog",
+    "rentalDays": "Rental days",
+    "rentalSubtotal": "Rental subtotal",
+    "depositSubtotal": "Deposit subtotal",
+    "grandTotal": "Grand total",
+    "remove": "Remove",
+    "pieces": "pieces",
+    "perDay": "/day",
+    "deposit": "Deposit",
+    "days": "days",
+    "addToCart": "Rent",
+    "alreadyInCart": "Already in cart",
+    "addedToCart": "Added to cart",
+    "addedToCartDescription": "{title} has been added to your cart.",
+    "proceedToCheckout": "Proceed to checkout"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "subtitle": "Pick a delivery method and provide contact details.",
+    "emptyTitle": "Your cart is empty",
+    "emptyDescription": "Add at least one puzzle before placing an order.",
+    "delivery": {
+      "heading": "Delivery method",
+      "description": "Choose how you want to receive the puzzles."
+    },
+    "address": {
+      "region": "Region",
+      "city": "City",
+      "warehouse": "Nova Poshta warehouse / locker",
+      "warehouseHint": "Example: \"Warehouse #12 (22 Khreschatyk St.)\"",
+      "street": "Street and building number",
+      "postalCode": "Postal code",
+      "pickupWarehouse": "Warehouse address",
+      "pickupSeller": "Seller address",
+      "pickupNotConfigured": "We will share the address once your order is confirmed."
+    },
+    "contact": {
+      "heading": "Contact details",
+      "description": "We will call this number to confirm the order.",
+      "name": "Name",
+      "phone": "Phone",
+      "phoneHint": "Ukrainian mobile in format +380XXXXXXXXX"
+    },
+    "summary": {
+      "heading": "Your order",
+      "itemMeta": "{days} d × {price}",
+      "deposit": "Deposit",
+      "rentalSubtotal": "Rental subtotal",
+      "depositSubtotal": "Deposit subtotal",
+      "grandTotal": "Total due",
+      "unavailable": "No longer available"
+    },
+    "submit": "Continue to payment",
+    "submitting": "Placing order…",
+    "submitHint": "After creating the order you will be redirected to Monobank to complete payment.",
+    "validation": {
+      "fieldRequired": "This field is required",
+      "nameRequired": "Enter a name",
+      "phoneInvalid": "Invalid phone. Example: +380501234567",
+      "regionRequired": "Enter a region",
+      "cityRequired": "Enter a city",
+      "warehouseRequired": "Enter a warehouse number",
+      "streetRequired": "Enter a street and building",
+      "postalCodeRequired": "Enter a postal code"
+    },
+    "toast": {
+      "failedTitle": "Could not place order",
+      "failedDescription": "Please try again.",
+      "unavailableTitle": "Some puzzles are no longer available",
+      "unavailableDescription": "Review the cart and remove the highlighted items.",
+      "paymentFailedTitle": "Could not start payment",
+      "paymentFailedDescription": "Order was created but the payment page is unavailable. Please try again."
+    },
+    "paymentResult": {
+      "pendingTitle": "Confirming payment",
+      "pendingDescription": "Hold on while we wait for confirmation from the bank.",
+      "processingTitle": "Payment is processing",
+      "processingDescription": "This can take a few minutes. We will update the order status as soon as the bank responds.",
+      "redirecting": "Redirecting…",
+      "redirectingDescription": "Preparing the confirmation page.",
+      "failureTitle": "Payment did not complete",
+      "failureDescription": "The payment failed or was cancelled. Your order is saved — please try again.",
+      "errorInit": "We could not start a new payment session. Please try again.",
+      "errorLookup": "We could not refresh the payment status. Please try again.",
+      "retry": "Try payment again",
+      "retrying": "Starting payment…",
+      "backToCart": "Back to cart",
+      "viewOrders": "My orders",
+      "continueBrowsing": "Browse catalog"
+    },
+    "success": {
+      "title": "Order placed",
+      "description": "Thanks! We will reach out to confirm.",
+      "orderNumber": "Order number",
+      "placedAt": "Placed at",
+      "delivery": "Delivery method",
+      "rentalSubtotal": "Rental subtotal",
+      "deposit": "Deposit",
+      "grandTotal": "Total",
+      "viewOrders": "My orders",
+      "continueBrowsing": "Browse catalog",
+      "orderNotFound": "Order created, but details are unavailable."
+    }
+  },
+  "profile": {
+    "title": "My profile",
+    "subtitle": "Manage your details and review your order history.",
+    "info": {
+      "heading": "Personal info",
+      "description": "Used for rentals and delivery.",
+      "name": "Name",
+      "email": "Email",
+      "emailHint": "Email cannot be changed.",
+      "phone": "Phone",
+      "phoneHint": "Ukrainian mobile in format +380XXXXXXXXX",
+      "deliveryHeading": "Delivery address",
+      "deliveryHint": "Nova Poshta details. Currently entered manually.",
+      "region": "Region",
+      "city": "City",
+      "warehouse": "Warehouse / parcel locker",
+      "warehouseHint": "Example: \"Warehouse #12 (22 Khreschatyk St.)\"",
+      "save": "Save changes",
+      "saving": "Saving…",
+      "toast": {
+        "saved": "Changes saved",
+        "failed": "Save failed"
+      }
+    },
+    "password": {
+      "heading": "Change password",
+      "description": "Update the password used to sign in.",
+      "current": "Current password",
+      "new": "New password",
+      "confirm": "Confirm new password",
+      "hint": "At least 8 characters.",
+      "save": "Change password",
+      "saving": "Saving…",
+      "toast": {
+        "changed": "Password updated",
+        "failed": "Could not change password"
+      }
+    },
+    "validation": {
+      "nameRequired": "Enter a name",
+      "phoneInvalid": "Invalid phone. Example: +380501234567",
+      "currentPasswordRequired": "Enter the current password",
+      "currentPasswordInvalid": "Current password is incorrect",
+      "passwordTooShort": "Password must be at least 8 characters",
+      "passwordsMustMatch": "Passwords do not match"
+    },
+    "orders": {
+      "heading": "Order history",
+      "description": "Your recent orders. Tap one to see details.",
+      "total": "Total",
+      "itemCount": "{count, plural, one {# puzzle} other {# puzzles}}",
+      "empty": {
+        "title": "No orders yet",
+        "description": "Once you rent your first puzzle, it shows up here.",
+        "cta": "Browse the catalog"
+      }
+    },
+    "orderDetail": {
+      "title": "Order #{id}",
+      "back": "Back to profile",
+      "itemsHeading": "Puzzles",
+      "itemMeta": "{days} d × {price}",
+      "summaryHeading": "Summary",
+      "itemsTotal": "Rental subtotal",
+      "deposit": "Deposit",
+      "total": "Total due",
+      "delivery": "Delivery method",
+      "trackingNumber": "Tracking number",
+      "trackingNotSet": "Not yet assigned",
+      "notFoundTitle": "Order not found",
+      "notFoundDescription": "This order does not exist or does not belong to you."
+    }
+  },
+  "orderStatus": {
+    "PENDING": "Pending",
+    "CONFIRMED": "Confirmed",
+    "SHIPPED": "Shipped",
+    "DELIVERED": "Delivered",
+    "RETURNED": "Returned",
+    "CANCELLED": "Cancelled"
+  },
+  "deliveryMethod": {
+    "NOVA_POSHTA": "Nova Poshta",
+    "UKRPOSHTA": "Ukrposhta",
+    "SELF_PICKUP_WAREHOUSE": "Pickup from warehouse",
+    "SELF_PICKUP_SELLER": "Pickup from seller"
+  },
+  "catalog": {
+    "title": "Puzzle Catalog",
+    "subtitle": "Find the perfect puzzle to rent",
+    "filters": "Filters",
+    "filtersOpen": "Open filters",
+    "filtersClose": "Close filters",
+    "filtersApply": "Apply",
+    "filtersClear": "Clear",
+    "category": "Category",
+    "pieceCount": "Piece Count",
+    "condition": "Condition",
+    "type": "Type",
+    "rent": "Rent",
+    "perDay": "₴/day",
+    "pieces": "pcs.",
+    "emptyTitle": "No puzzles found",
+    "emptyDescription": "Try adjusting or clearing your filters",
+    "loading": "Loading...",
+    "categories": {
+      "landscape": "Landscapes",
+      "animals": "Animals",
+      "art": "Art",
+      "cities": "Cities",
+      "fantasy": "Fantasy",
+      "abstract": "Abstract"
+    },
+    "conditions": {
+      "new": "New",
+      "excellent": "Excellent",
+      "good": "Good",
+      "fair": "Fair"
+    },
+    "types": {
+      "all": "All types",
+      "standard": "Standard",
+      "panoramic": "Panoramic",
+      "shaped": "Shaped",
+      "3d": "3D"
+    },
+    "pieceRanges": {
+      "all": "Any count",
+      "100-500": "100–500 pieces",
+      "500-1000": "500–1000 pieces",
+      "1000-2000": "1000–2000 pieces",
+      "2000+": "2000+ pieces"
+    },
+    "conditionAll": "Any condition",
+    "search": "Search",
+    "searchPlaceholder": "Puzzle name...",
+    "availability": "Availability",
+    "availabilityAll": "All",
+    "availabilityYes": "Available",
+    "availabilityNo": "Unavailable",
+    "unavailable": "Unavailable",
+    "sort": "Sort",
+    "sortNewest": "Newest",
+    "sortPopular": "Most popular",
+    "sortPriceAsc": "Price: low to high",
+    "sortPriceDesc": "Price: high to low",
+    "resultsCount": "puzzles",
+    "errorLoading": "Failed to load puzzles. Please try again.",
+    "pagination": "Page navigation",
+    "paginationPrev": "Previous",
+    "paginationNext": "Next",
+    "paginationOf": "Page {page} of {totalPages}"
+  },
+  "puzzleDetail": {
+    "breadcrumbHome": "Home",
+    "breadcrumbCatalog": "Catalog",
+    "pieces": "pieces",
+    "pricePerDay": "₴/day",
+    "deposit": "Deposit",
+    "depositAmount": "₴",
+    "available": "Available",
+    "unavailable": "Unavailable",
+    "rent": "Rent",
+    "comingSoon": "Coming soon",
+    "condition": "Condition",
+    "type": "Type",
+    "category": "Category",
+    "description": "Description",
+    "gallery": "Image gallery",
+    "imageAlt": "Puzzle image",
+    "thumbnailAlt": "Thumbnail {index}",
+    "openLightbox": "Open image fullscreen",
+    "closeLightbox": "Close",
+    "notFound": "Puzzle not found",
+    "notFoundDescription": "A puzzle with this ID does not exist or has been removed.",
+    "backToCatalog": "Back to catalog",
+    "conditions": {
+      "new": "New",
+      "excellent": "Excellent",
+      "good": "Good",
+      "fair": "Fair"
+    },
+    "types": {
+      "CLASSIC": "Classic",
+      "THREE_D": "3D",
+      "FLOOR": "Floor",
+      "EDUCATIONAL": "Educational"
+    }
+  },
+  "admin": {
+    "nav": {
+      "heading": "Admin",
+      "puzzles": "Puzzles",
+      "orders": "Orders"
+    },
+    "orders": {
+      "title": "Orders",
+      "subtitle": "{total} total",
+      "empty": {
+        "title": "No orders yet",
+        "description": "Once customers place orders, they will appear here."
+      },
+      "filters": {
+        "search": "Customer",
+        "searchPlaceholder": "Name or email…",
+        "status": "Status",
+        "statusAll": "All statuses",
+        "from": "From",
+        "to": "To",
+        "apply": "Apply",
+        "reset": "Reset"
+      },
+      "table": {
+        "id": "Order",
+        "customer": "Customer",
+        "status": "Status",
+        "delivery": "Delivery",
+        "total": "Total",
+        "items": "Items",
+        "date": "Created",
+        "view": "View"
+      },
+      "pagination": {
+        "label": "Page navigation",
+        "prev": "Previous",
+        "next": "Next",
+        "of": "Page {page} of {totalPages}"
+      },
+      "detail": {
+        "back": "Back to orders",
+        "title": "Order #{id}",
+        "createdAt": "Created",
+        "updatedAt": "Last updated",
+        "customerHeading": "Customer",
+        "customerName": "Name",
+        "customerEmail": "Email",
+        "customerPhone": "Phone",
+        "phoneNotSet": "—",
+        "deliveryHeading": "Delivery",
+        "deliveryMethod": "Method",
+        "deliveryAddress": "Address",
+        "deliveryAddressNotSet": "Not provided",
+        "trackingNumber": "Tracking number",
+        "trackingNotSet": "Not yet assigned",
+        "trackingPlaceholder": "Carrier tracking ID",
+        "saveTracking": "Save tracking",
+        "savingTracking": "Saving…",
+        "savedTracking": "Tracking saved",
+        "savedTrackingFailed": "Could not save tracking",
+        "itemsHeading": "Items",
+        "itemRentalDays": "{days} day(s)",
+        "itemPricePerDay": "Price / day",
+        "itemDeposit": "Deposit",
+        "itemSubtotal": "Subtotal",
+        "summaryHeading": "Summary",
+        "rentalSubtotal": "Rental subtotal",
+        "deposit": "Deposit",
+        "total": "Total",
+        "paymentsHeading": "Payments",
+        "paymentsEmpty": "No payments recorded yet.",
+        "paymentType": "Type",
+        "paymentStatus": "Status",
+        "paymentAmount": "Amount",
+        "paymentInvoice": "Invoice",
+        "paymentRef": "Ref",
+        "paymentDate": "Date",
+        "notesHeading": "Internal notes",
+        "notesDescription": "Visible to admins only.",
+        "notesPlaceholder": "Add a note for the team…",
+        "saveNotes": "Save notes",
+        "savingNotes": "Saving…",
+        "savedNotes": "Notes saved",
+        "savedNotesFailed": "Could not save notes",
+        "transitionsHeading": "Status transitions",
+        "transitionsEmpty": "This order is in a terminal status.",
+        "transitionConfirm": "Mark as {status}",
+        "transitionShippedNeedsTracking": "Enter a tracking number above to ship.",
+        "transitionApplying": "Updating…",
+        "transitionFailed": "Could not update status"
+      },
+      "paymentType": {
+        "RENTAL": "Rental",
+        "DEPOSIT_HOLD": "Deposit hold"
+      },
+      "paymentStatus": {
+        "PENDING": "Pending",
+        "SUCCESS": "Success",
+        "FAILURE": "Failure",
+        "REVERSED": "Reversed"
+      }
+    },
+    "puzzles": {
+      "title": "Puzzles",
+      "subtitle": "{total} total",
+      "create": "Add puzzle",
+      "createTitle": "New puzzle",
+      "editTitle": "Edit \"{title}\"",
+      "backToList": "Back to puzzles",
+      "empty": {
+        "title": "No puzzles yet",
+        "description": "Add the first puzzle to make it appear in the catalog."
+      },
+      "table": {
+        "image": "",
+        "title": "Title",
+        "category": "Category",
+        "pieces": "Pieces",
+        "price": "Price / day",
+        "status": "Status",
+        "actions": "",
+        "noImage": "—"
+      },
+      "actions": {
+        "edit": "Edit",
+        "delete": "Delete"
+      },
+      "status": {
+        "available": "Available",
+        "unavailable": "Unavailable",
+        "hidden": "Hidden"
+      },
+      "filters": {
+        "search": "Search",
+        "searchPlaceholder": "Title (uk or en)…",
+        "category": "Category",
+        "categoryAll": "All categories",
+        "visibility": "Visibility",
+        "visibilityAll": "All",
+        "visibilityVisible": "Visible",
+        "visibilityHidden": "Hidden",
+        "availability": "Availability",
+        "availabilityAll": "All",
+        "availabilityYes": "Available",
+        "availabilityNo": "Unavailable",
+        "reset": "Reset"
+      },
+      "pagination": {
+        "label": "Page navigation",
+        "prev": "Previous",
+        "next": "Next",
+        "of": "Page {page} of {totalPages}"
+      },
+      "delete": {
+        "title": "Delete puzzle?",
+        "description": "\"{title}\" will be hidden from the catalog. Existing orders are unaffected.",
+        "cancel": "Cancel",
+        "confirm": "Delete",
+        "confirming": "Deleting…"
+      },
+      "toast": {
+        "deleted": "Puzzle hidden",
+        "deleteFailed": "Failed to delete puzzle"
+      },
+      "condition": {
+        "NEW": "New",
+        "LIKE_NEW": "Like new",
+        "GOOD": "Good",
+        "FAIR": "Fair"
+      },
+      "type": {
+        "CLASSIC": "Classic",
+        "THREE_D": "3D",
+        "FLOOR": "Floor",
+        "EDUCATIONAL": "Educational"
+      },
+      "form": {
+        "lang": {
+          "uk": "Ukrainian",
+          "en": "English"
+        },
+        "sections": {
+          "basics": "Basics",
+          "details": "Details",
+          "images": "Images",
+          "imagesDescription": "Drag to reorder. The first image is used as the catalog thumbnail."
+        },
+        "fields": {
+          "titleUk": "Title (uk)",
+          "titleEn": "Title (en)",
+          "descriptionUk": "Description (uk)",
+          "descriptionEn": "Description (en)",
+          "category": "Category",
+          "pieceCount": "Piece count",
+          "condition": "Condition",
+          "type": "Type",
+          "rentalPricePerDay": "Rental price per day",
+          "depositAmount": "Deposit",
+          "isAvailable": "Available for rental"
+        },
+        "placeholders": {
+          "category": "Pick a category"
+        },
+        "hints": {
+          "uah": "In UAH (₴)"
+        },
+        "actions": {
+          "cancel": "Cancel",
+          "create": "Create puzzle",
+          "save": "Save changes",
+          "saving": "Saving…"
+        },
+        "toast": {
+          "created": "Puzzle created",
+          "updated": "Puzzle updated",
+          "failed": "Save failed"
+        },
+        "images": {
+          "dropzoneLabel": "Drop images here",
+          "dropHere": "Drop images here, or",
+          "browse": "Browse files",
+          "uploading": "Uploading…",
+          "hint": "Up to 20 images, max 5MB each",
+          "altUk": "Alt text (uk)",
+          "altEn": "Alt text (en)",
+          "position": "Position {n}",
+          "remove": "Remove image",
+          "dragHandle": "Drag to reorder",
+          "toast": {
+            "uploaded": "Images uploaded",
+            "uploadedMock": "Images attached (preview only)",
+            "uploadedMockDescription": "Upload endpoint not deployed yet — using local preview. Images will be re-uploaded once the upload service ships.",
+            "uploadFailed": "Upload failed",
+            "tooMany": "Maximum 20 images per puzzle"
+          }
+        }
+      }
+    }
   }
 }

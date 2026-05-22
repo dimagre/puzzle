@@ -1,7 +1,10 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
+import { authorizeWithCredentials } from "@/lib/auth/credentials";
+import { authConfig } from "@/auth.config";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
+  ...authConfig,
   providers: [
     Credentials({
       name: "credentials",
@@ -9,13 +12,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
       },
-      async authorize() {
-        // TODO: Implement actual authentication logic with database
-        return null;
-      },
+      authorize: authorizeWithCredentials,
     }),
   ],
-  pages: {
-    signIn: "/login",
-  },
 });

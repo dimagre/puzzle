@@ -6,3 +6,226 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
+enum PuzzleCondition {
+  NEW
+  LIKE_NEW
+  GOOD
+  FAIR
+}
+
+enum PuzzleType {
+  CLASSIC
+  THREE_D
+  FLOOR
+  EDUCATIONAL
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  SHIPPED
+  DELIVERED
+  RETURNED
+  CANCELLED
+}
+
+enum DeliveryMethod {
+  NOVA_POSHTA
+  UKRPOSHTA
+  SELF_PICKUP_WAREHOUSE
+  SELF_PICKUP_SELLER
+}
+
+enum TrackingAction {
+  RENTED
+  RETURNED
+  MOVED
+  INVENTORIED
+}
+
+enum PaymentType {
+  RENTAL
+  DEPOSIT_HOLD
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCESS
+  FAILURE
+  REVERSED
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  role         UserRole @default(USER)
+  phone        String?
+
+  deliveryRegion              String?
+  deliveryCity                String?
+  deliveryNovaPoshtaWarehouse String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  orders           Order[]
+  trackingHoldings PuzzleTracking[] @relation("TrackingHeldBy")
+
+  @@index([role])
+}
+
+model Category {
+  id      String   @id @default(cuid())
+  name    String
+  nameEn  String
+  slug    String   @unique
+  puzzles Puzzle[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Puzzle {
+  id                String          @id @default(cuid())
+  title             String
+  titleEn           String
+  description       String
+  descriptionEn     String
+  pieceCount        Int
+  condition         PuzzleCondition
+  type              PuzzleType
+  rentalPricePerDay Decimal         @db.Decimal(10, 2)
+  depositAmount     Decimal         @db.Decimal(10, 2)
+  isAvailable       Boolean         @default(true)
+  isVisible         Boolean         @default(true)
+  rentalCount       Int             @default(0)
+
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  images     PuzzleImage[]
+  tracking   PuzzleTracking[]
+  orderItems OrderItem[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([categoryId])
+  @@index([isVisible, isAvailable])
+  @@index([type])
+}
+
+model PuzzleImage {
+  id    String @id @default(cuid())
+  url   String
+  order Int    @default(0)
+  alt   String
+  altEn String
+
+  puzzleId String
+  puzzle   Puzzle @relation(fields: [puzzleId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@index([puzzleId, order])
+}
+
+model Order {
+  id             String         @id @default(cuid())
+  status         OrderStatus    @default(PENDING)
+  deliveryMethod DeliveryMethod
+  trackingNumber String?
+  adminNotes     String?
+  totalAmount    Decimal        @db.Decimal(10, 2)
+  depositAmount  Decimal        @db.Decimal(10, 2)
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  items    OrderItem[]
+  payments Payment[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model Payment {
+  id              String        @id @default(cuid())
+  type            PaymentType
+  status          PaymentStatus @default(PENDING)
+  amount          Decimal       @db.Decimal(10, 2)
+  monoInvoiceId   String        @unique
+  monoPaymentRef  String?
+
+  orderId String
+  order   Order  @relation(fields: [orderId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([orderId])
+  @@index([status])
+}
+
+model OrderItem {
+  id            String  @id @default(cuid())
+  rentalDays    Int
+  pricePerDay   Decimal @db.Decimal(10, 2)
+  depositAmount Decimal @db.Decimal(10, 2)
+
+  orderId String
+  order   Order  @relation(fields: [orderId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+  puzzleId String
+  puzzle   Puzzle @relation(fields: [puzzleId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@index([orderId])
+  @@index([puzzleId])
+}
+
+model PuzzleTracking {
+  id       String         @id @default(cuid())
+  location String
+  action   TrackingAction
+  note     String?
+
+  puzzleId String
+  puzzle   Puzzle @relation(fields: [puzzleId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+  heldByUserId String?
+  heldByUser   User?   @relation("TrackingHeldBy", fields: [heldByUserId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@index([puzzleId])
+  @@index([heldByUserId])
+  @@index([action])
+}
+
+model ActivityLog {
+  id         String   @id @default(cuid())
+  actorId    String?
+  entityType String
+  entityId   String
+  action     String
+  details    Json?
+  createdAt  DateTime @default(now())
+
+  @@index([entityType, entityId])
+  @@index([actorId])
+  @@index([createdAt])
+}

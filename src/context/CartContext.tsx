@@ -18,6 +18,7 @@ interface CartContextValue {
   addItem: (item: Omit<CartItem, "rentalDays">) => void;
   removeItem: (puzzleId: string) => void;
   updateRentalDays: (puzzleId: string, days: number) => void;
+  clearCart: () => void;
   isInCart: (puzzleId: string) => boolean;
   itemCount: number;
 }
@@ -64,6 +65,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     );
   }, []);
 
+  const clearCart = useCallback(() => {
+    setItems([]);
+  }, []);
+
   const isInCart = useCallback(
     (puzzleId: string) => items.some((i) => i.puzzleId === puzzleId),
     [items]
@@ -71,7 +76,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <CartContext.Provider
-      value={{ items, addItem, removeItem, updateRentalDays, isInCart, itemCount: items.length }}
+      value={{ items, addItem, removeItem, updateRentalDays, clearCart, isInCart, itemCount: items.length }}
     >
       {children}
     </CartContext.Provider>

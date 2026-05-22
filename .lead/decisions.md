@@ -24,3 +24,5 @@
 - **PUZ-14 merged:** cart feature (localStorage, add/remove, rental days, header icon). All acceptance criteria met.
 - **Phase 2 batch 1 complete.** Both PUZ-14 and PUZ-17 merged to main.
 - **Phase 2 batch 2 started:** PUZ-15 (Checkout flow) assigned to fullstack-dev. Single-page form (not wizard), creates Order with status PENDING, no payment. Sequential dependency chain: PUZ-15 → PUZ-16 (Monobank) → PUZ-18 (Admin orders) → PUZ-19 (Email notifications).
+- **PUZ-15 merged (PR #18):** checkout flow — single-page, delivery method + address + summary, creates Order PENDING. All acceptance criteria met.
+- **PUZ-16 (Monobank) specced and dispatched:** simplified MVP — single payment for rental+deposit (no separate hold). Redirect flow via Monobank hosted page. Webhook verifies via status API. Assigned to fullstack-dev immediately after PUZ-15 merge to maintain pipeline flow without owner intervention.

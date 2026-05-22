@@ -25,3 +25,9 @@ ui-dev delivered a clean PR in ~6 minutes of wall time after assignment. All 10 
 fullstack-dev delivered a comprehensive PR (19 files, 1871 insertions) covering profile CRUD, password change, and order history — all acceptance criteria met. One review round needed: the PR accidentally included stale versions of `.lead/decisions.md` and `.lead/project.md`. The agent fixed it cleanly with a revert commit (no force-push, respecting repo policy).
 
 **Pattern:** when specialists branch from a point where `.lead/` files differ from current main, their PR can inadvertently carry those diffs. Worth noting in future specs: "Do not modify files under `.lead/`." Adding this as a standing constraint will prevent the issue without needing a review round.
+
+## 2026-05-22 — Pipeline stall after PUZ-15 merge
+
+PUZ-15 was merged to main but the next task (PUZ-16 Monobank) was never specced or assigned. The owner had to intervene twice to point out the pipeline wasn't flowing. Root cause: I treated "merge PR" as the end of my responsibility for that batch, instead of immediately triggering the next task in the dependency chain.
+
+**Pattern:** merging a PR that unblocks a sequential dependency is NOT the end of the cycle. The merge event must immediately trigger: (1) update project memory, (2) write full spec for the next task, (3) assign and mention the specialist. This is a single atomic operation — if any step is skipped, the pipeline stalls and the owner has to intervene. Going forward: treat "merge → spec next → assign → mention" as one indivisible action.

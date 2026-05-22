@@ -49,6 +49,18 @@ enum TrackingAction {
   INVENTORIED
 }
 
+enum PaymentType {
+  RENTAL
+  DEPOSIT_HOLD
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCESS
+  FAILURE
+  REVERSED
+}
+
 model User {
   id           String   @id @default(cuid())
   email        String   @unique
@@ -138,7 +150,8 @@ model Order {
   userId String
   user   User   @relation(fields: [userId], references: [id], onDelete: Restrict, onUpdate: Cascade)
 
-  items OrderItem[]
+  items    OrderItem[]
+  payments Payment[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -146,6 +159,24 @@ model Order {
   @@index([userId])
   @@index([status])
   @@index([createdAt])
+}
+
+model Payment {
+  id              String        @id @default(cuid())
+  type            PaymentType
+  status          PaymentStatus @default(PENDING)
+  amount          Decimal       @db.Decimal(10, 2)
+  monoInvoiceId   String        @unique
+  monoPaymentRef  String?
+
+  orderId String
+  order   Order  @relation(fields: [orderId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([orderId])
+  @@index([status])
 }
 
 model OrderItem {

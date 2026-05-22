@@ -68,9 +68,9 @@
       "grandTotal": "Total due",
       "unavailable": "No longer available"
     },
-    "submit": "Place order",
+    "submit": "Continue to payment",
     "submitting": "Placing order…",
-    "submitHint": "Payment is collected after a manager confirms the order.",
+    "submitHint": "After creating the order you will be redirected to Monobank to complete payment.",
     "validation": {
       "fieldRequired": "This field is required",
       "nameRequired": "Enter a name",
@@ -85,7 +85,26 @@
       "failedTitle": "Could not place order",
       "failedDescription": "Please try again.",
       "unavailableTitle": "Some puzzles are no longer available",
-      "unavailableDescription": "Review the cart and remove the highlighted items."
+      "unavailableDescription": "Review the cart and remove the highlighted items.",
+      "paymentFailedTitle": "Could not start payment",
+      "paymentFailedDescription": "Order was created but the payment page is unavailable. Please try again."
+    },
+    "paymentResult": {
+      "pendingTitle": "Confirming payment",
+      "pendingDescription": "Hold on while we wait for confirmation from the bank.",
+      "processingTitle": "Payment is processing",
+      "processingDescription": "This can take a few minutes. We will update the order status as soon as the bank responds.",
+      "redirecting": "Redirecting…",
+      "redirectingDescription": "Preparing the confirmation page.",
+      "failureTitle": "Payment did not complete",
+      "failureDescription": "The payment failed or was cancelled. Your order is saved — please try again.",
+      "errorInit": "We could not start a new payment session. Please try again.",
+      "errorLookup": "We could not refresh the payment status. Please try again.",
+      "retry": "Try payment again",
+      "retrying": "Starting payment…",
+      "backToCart": "Back to cart",
+      "viewOrders": "My orders",
+      "continueBrowsing": "Browse catalog"
     },
     "success": {
       "title": "Order placed",

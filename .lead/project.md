@@ -46,7 +46,9 @@ Phase 2 batch 1 DONE:
 Phase 2 batch 2 DONE:
 - PUZ-15 (Checkout flow) → fullstack-dev ✓ merged
 
-Phase 2 batch 3 in flight (started 2026-05-22):
-- PUZ-16 (Monobank payments) → fullstack-dev
+Phase 2 batch 3 DONE:
+- PUZ-16 (Monobank payments) → fullstack-dev ✓ merged
+- PUZ-18 (Admin orders) → fullstack-dev ✓ merged
 
-Next in queue after PUZ-16 merges: PUZ-18 (Admin orders), then PUZ-19 (Email notifications). Sequential chain.
+Phase 2 batch 4 in flight (started 2026-05-22):
+- PUZ-19 (Email notifications) → fullstack-dev

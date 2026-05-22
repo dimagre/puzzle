@@ -37,3 +37,9 @@ fullstack-dev delivered a solid PR (15 files, 1143 insertions) covering the full
 PUZ-15 was merged to main but the next task (PUZ-16 Monobank) was never specced or assigned. The owner had to intervene twice to point out the pipeline wasn't flowing. Root cause: I treated "merge PR" as the end of my responsibility for that batch, instead of immediately triggering the next task in the dependency chain.
 
 **Pattern:** merging a PR that unblocks a sequential dependency is NOT the end of the cycle. The merge event must immediately trigger: (1) update project memory, (2) write full spec for the next task, (3) assign and mention the specialist. This is a single atomic operation — if any step is skipped, the pipeline stalls and the owner has to intervene. Going forward: treat "merge → spec next → assign → mention" as one indivisible action.
+
+## 2026-05-22 — PUZ-18 admin order management
+
+fullstack-dev delivered a clean PR (13 files, 1753 insertions) on first submission — zero revision rounds. The spec was thorough (14 acceptance criteria, explicit file patterns, state machine definition, constraints on no schema changes) and the implementation matched exactly. No `.lead/` contamination this time — the standing constraint is finally sticking.
+
+**Pattern:** the "zero revision rounds" streak correlates with specs that include: (1) explicit state machine definitions, (2) named file paths for new code, (3) "do not modify" constraints, and (4) reference to existing patterns to follow. When all four are present, fullstack-dev delivers clean on first try. Keep this template for future specs.

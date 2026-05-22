@@ -4,6 +4,7 @@ import { Prisma } from "@prisma/client";
 const {
   orderFindFirst,
   paymentCreate,
+  paymentFindFirst,
   paymentFindUnique,
   paymentUpdate,
   orderUpdate,
@@ -14,6 +15,7 @@ const {
 } = vi.hoisted(() => ({
   orderFindFirst: vi.fn(),
   paymentCreate: vi.fn(),
+  paymentFindFirst: vi.fn(),
   paymentFindUnique: vi.fn(),
   paymentUpdate: vi.fn(),
   orderUpdate: vi.fn(),
@@ -28,6 +30,7 @@ vi.mock("@/lib/prisma", () => ({
     order: { findFirst: orderFindFirst, update: orderUpdate },
     payment: {
       create: paymentCreate,
+      findFirst: paymentFindFirst,
       findUnique: paymentFindUnique,
       update: paymentUpdate,
     },
@@ -66,9 +69,14 @@ beforeEach(() => {
   process.env.NEXT_PUBLIC_APP_URL = "https://app.example.com";
   process.env.MONOBANK_TOKEN = "test-token";
   authMock.mockResolvedValue({ user: { id: "user_1", email: "u@x.com" } });
+  paymentFindFirst.mockResolvedValue(null);
   transaction.mockImplementation(async (cb: (tx: unknown) => unknown) => {
     const tx = {
-      payment: { update: paymentUpdate },
+      payment: {
+        create: paymentCreate,
+        findFirst: paymentFindFirst,
+        update: paymentUpdate,
+      },
       order: { update: orderUpdate },
     };
     return cb(tx);
@@ -78,6 +86,7 @@ beforeEach(() => {
 afterEach(() => {
   orderFindFirst.mockReset();
   paymentCreate.mockReset();
+  paymentFindFirst.mockReset();
   paymentFindUnique.mockReset();
   paymentUpdate.mockReset();
   orderUpdate.mockReset();
@@ -135,6 +144,40 @@ describe("POST /api/payments/create", () => {
       postJson("http://localhost/api/payments/create", { orderId: "o_1" }) as never,
     );
     expect(res.status).toBe(409);
+  });
+
+  it("returns 409 when an existing rental payment is still PENDING", async () => {
+    orderFindFirst.mockResolvedValue({
+      id: "o_1",
+      status: "PENDING",
+      totalAmount: new Prisma.Decimal("250.00"),
+      payments: [{ id: "p_1", status: "PENDING", type: "RENTAL" }],
+    });
+    const res = await createPayment(
+      postJson("http://localhost/api/payments/create", { orderId: "o_1" }) as never,
+    );
+    expect(res.status).toBe(409);
+    expect(monoCreateInvoice).not.toHaveBeenCalled();
+  });
+
+  it("returns 409 when a concurrent request creates a PENDING payment between the read and write", async () => {
+    orderFindFirst.mockResolvedValue({
+      id: "o_1",
+      status: "PENDING",
+      totalAmount: new Prisma.Decimal("250.00"),
+      payments: [],
+    });
+    monoCreateInvoice.mockResolvedValue({
+      invoiceId: "inv_race",
+      pageUrl: "https://pay.mono/inv_race",
+    });
+    paymentFindFirst.mockResolvedValue({ id: "p_concurrent" });
+
+    const res = await createPayment(
+      postJson("http://localhost/api/payments/create", { orderId: "o_1" }) as never,
+    );
+    expect(res.status).toBe(409);
+    expect(paymentCreate).not.toHaveBeenCalled();
   });
 
   it("creates an invoice and stores the payment record", async () => {

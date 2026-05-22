@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { Prisma } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
 import { requireSessionUser } from "@/lib/api/profile-guard";
 import {
@@ -12,6 +13,8 @@ import { createPaymentSchema } from "@/lib/validation/payments";
 import { createInvoice, uahToKopecks } from "@/lib/payments/monobank";
 
 export const dynamic = "force-dynamic";
+
+class ConcurrentPaymentError extends Error {}
 
 function getAppUrl(): string {
   const url = process.env.NEXT_PUBLIC_APP_URL ?? process.env.AUTH_URL;
@@ -55,11 +58,16 @@ export async function POST(req: NextRequest) {
       return conflict("Order is not pending payment");
     }
 
-    const successful = order.payments.find(
-      (p) => p.type === "RENTAL" && p.status === "SUCCESS",
+    const activeRental = order.payments.find(
+      (p) =>
+        p.type === "RENTAL" &&
+        (p.status === "SUCCESS" || p.status === "PENDING"),
     );
-    if (successful) {
+    if (activeRental?.status === "SUCCESS") {
       return conflict("Order is already paid");
+    }
+    if (activeRental?.status === "PENDING") {
+      return conflict("Order already has an active payment in progress");
     }
 
     const appUrl = getAppUrl();
@@ -75,15 +83,38 @@ export async function POST(req: NextRequest) {
       webHookUrl: `${appUrl}/api/payments/webhook`,
     });
 
-    await prisma.payment.create({
-      data: {
-        orderId: order.id,
-        type: "RENTAL",
-        status: "PENDING",
-        amount: order.totalAmount,
-        monoInvoiceId: invoice.invoiceId,
-      },
-    });
+    try {
+      await prisma.$transaction(
+        async (tx) => {
+          const existing = await tx.payment.findFirst({
+            where: {
+              orderId: order.id,
+              type: "RENTAL",
+              status: { in: ["PENDING", "SUCCESS"] },
+            },
+            select: { id: true },
+          });
+          if (existing) {
+            throw new ConcurrentPaymentError();
+          }
+          await tx.payment.create({
+            data: {
+              orderId: order.id,
+              type: "RENTAL",
+              status: "PENDING",
+              amount: order.totalAmount,
+              monoInvoiceId: invoice.invoiceId,
+            },
+          });
+        },
+        { isolationLevel: Prisma.TransactionIsolationLevel.Serializable },
+      );
+    } catch (err) {
+      if (err instanceof ConcurrentPaymentError) {
+        return conflict("Order already has an active payment in progress");
+      }
+      throw err;
+    }
 
     return NextResponse.json({ paymentUrl: invoice.pageUrl });
   } catch (err) {

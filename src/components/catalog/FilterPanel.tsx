@@ -10,37 +10,43 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
-import { type PuzzleCategory, type PuzzleCondition, type PuzzleType, type PieceCountRange } from "@/lib/mock-data";
+import { type PieceCountRange } from "@/lib/api/puzzle-types";
 
-const CATEGORIES: PuzzleCategory[] = ["landscape", "animals", "art", "cities", "fantasy", "abstract"];
 const PIECE_RANGES: PieceCountRange[] = ["100-500", "500-1000", "1000-2000", "2000+"];
-const CONDITIONS: PuzzleCondition[] = ["new", "excellent", "good", "fair"];
-const TYPES: PuzzleType[] = ["standard", "panoramic", "shaped", "3d"];
+
+export interface ApiCategory {
+  id: string;
+  name: string;
+  nameEn: string;
+  slug: string;
+}
 
 export interface FilterState {
-  categories: PuzzleCategory[];
+  categorySlugs: string[];
   pieceRange: PieceCountRange | "all";
-  condition: PuzzleCondition | "all";
-  type: PuzzleType | "all";
+  available: "all" | "true" | "false";
+  search: string;
 }
 
 interface FilterPanelProps {
   filters: FilterState;
+  categories: ApiCategory[];
+  locale: string;
   onChange: (filters: FilterState) => void;
 }
 
-export function FilterPanel({ filters, onChange }: FilterPanelProps) {
+export function FilterPanel({ filters, categories, locale, onChange }: FilterPanelProps) {
   const t = useTranslations("catalog");
 
-  function toggleCategory(cat: PuzzleCategory) {
-    const next = filters.categories.includes(cat)
-      ? filters.categories.filter((c) => c !== cat)
-      : [...filters.categories, cat];
-    onChange({ ...filters, categories: next });
+  function toggleCategory(slug: string) {
+    const next = filters.categorySlugs.includes(slug)
+      ? filters.categorySlugs.filter((s) => s !== slug)
+      : [...filters.categorySlugs, slug];
+    onChange({ ...filters, categorySlugs: next });
   }
 
   function clearAll() {
-    onChange({ categories: [], pieceRange: "all", condition: "all", type: "all" });
+    onChange({ categorySlugs: [], pieceRange: "all", available: "all", search: "" });
   }
 
   return (
@@ -52,18 +58,33 @@ export function FilterPanel({ filters, onChange }: FilterPanelProps) {
         </Button>
       </div>
 
+      {/* Search */}
+      <div>
+        <label htmlFor="catalog-search" className="mb-2 block text-sm font-medium">
+          {t("search")}
+        </label>
+        <input
+          id="catalog-search"
+          type="search"
+          value={filters.search}
+          onChange={(e) => onChange({ ...filters, search: e.target.value })}
+          placeholder={t("searchPlaceholder")}
+          className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        />
+      </div>
+
       {/* Category */}
       <fieldset>
         <legend className="mb-3 text-sm font-medium">{t("category")}</legend>
         <div className="flex flex-col gap-2">
-          {CATEGORIES.map((cat) => (
-            <label key={cat} className="flex cursor-pointer items-center gap-2 text-sm">
+          {categories.map((cat) => (
+            <label key={cat.slug} className="flex cursor-pointer items-center gap-2 text-sm">
               <Checkbox
-                id={`cat-${cat}`}
-                checked={filters.categories.includes(cat)}
-                onCheckedChange={() => toggleCategory(cat)}
+                id={`cat-${cat.slug}`}
+                checked={filters.categorySlugs.includes(cat.slug)}
+                onCheckedChange={() => toggleCategory(cat.slug)}
               />
-              <span>{t(`categories.${cat}`)}</span>
+              <span>{locale === "en" ? cat.nameEn : cat.name}</span>
             </label>
           ))}
         </div>
@@ -88,40 +109,20 @@ export function FilterPanel({ filters, onChange }: FilterPanelProps) {
         </Select>
       </div>
 
-      {/* Condition */}
+      {/* Availability */}
       <div>
-        <p className="mb-2 text-sm font-medium">{t("condition")}</p>
+        <p className="mb-2 text-sm font-medium">{t("availability")}</p>
         <Select
-          value={filters.condition}
-          onValueChange={(v) => onChange({ ...filters, condition: v as PuzzleCondition | "all" })}
+          value={filters.available}
+          onValueChange={(v) => onChange({ ...filters, available: v as "all" | "true" | "false" })}
         >
-          <SelectTrigger className="w-full" aria-label={t("condition")}>
+          <SelectTrigger className="w-full" aria-label={t("availability")}>
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">{t("conditionAll")}</SelectItem>
-            {CONDITIONS.map((c) => (
-              <SelectItem key={c} value={c}>{t(`conditions.${c}`)}</SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </div>
-
-      {/* Type */}
-      <div>
-        <p className="mb-2 text-sm font-medium">{t("type")}</p>
-        <Select
-          value={filters.type}
-          onValueChange={(v) => onChange({ ...filters, type: v as PuzzleType | "all" })}
-        >
-          <SelectTrigger className="w-full" aria-label={t("type")}>
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">{t("types.all")}</SelectItem>
-            {TYPES.map((tp) => (
-              <SelectItem key={tp} value={tp}>{t(`types.${tp}`)}</SelectItem>
-            ))}
+            <SelectItem value="all">{t("availabilityAll")}</SelectItem>
+            <SelectItem value="true">{t("availabilityYes")}</SelectItem>
+            <SelectItem value="false">{t("availabilityNo")}</SelectItem>
           </SelectContent>
         </Select>
       </div>

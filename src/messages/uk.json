@@ -55,6 +55,24 @@
       "1000-2000": "1000–2000 деталей",
       "2000+": "2000+ деталей"
     },
-    "conditionAll": "Будь-який стан"
+    "conditionAll": "Будь-який стан",
+    "search": "Пошук",
+    "searchPlaceholder": "Назва пазлу...",
+    "availability": "Наявність",
+    "availabilityAll": "Всі",
+    "availabilityYes": "Доступні",
+    "availabilityNo": "Недоступні",
+    "unavailable": "Недоступно",
+    "sort": "Сортування",
+    "sortNewest": "Новинки",
+    "sortPopular": "Популярні",
+    "sortPriceAsc": "Ціна: від низької",
+    "sortPriceDesc": "Ціна: від високої",
+    "resultsCount": "пазлів",
+    "errorLoading": "Не вдалося завантажити пазли. Спробуйте ще раз.",
+    "pagination": "Навігація по сторінках",
+    "paginationPrev": "Назад",
+    "paginationNext": "Вперед",
+    "paginationOf": "Сторінка {page} з {totalPages}"
   }
 }

@@ -7,7 +7,8 @@
   "nav": {
     "home": "Home",
     "catalog": "Catalog",
-    "login": "Sign In"
+    "login": "Sign In",
+    "admin": "Admin"
   },
   "catalog": {
     "title": "Puzzle Catalog",
@@ -109,6 +110,148 @@
       "THREE_D": "3D",
       "FLOOR": "Floor",
       "EDUCATIONAL": "Educational"
+    }
+  },
+  "admin": {
+    "nav": {
+      "heading": "Admin",
+      "puzzles": "Puzzles"
+    },
+    "puzzles": {
+      "title": "Puzzles",
+      "subtitle": "{total} total",
+      "create": "Add puzzle",
+      "createTitle": "New puzzle",
+      "editTitle": "Edit \"{title}\"",
+      "backToList": "Back to puzzles",
+      "empty": {
+        "title": "No puzzles yet",
+        "description": "Add the first puzzle to make it appear in the catalog."
+      },
+      "table": {
+        "image": "",
+        "title": "Title",
+        "category": "Category",
+        "pieces": "Pieces",
+        "price": "Price / day",
+        "status": "Status",
+        "actions": "",
+        "noImage": "—"
+      },
+      "actions": {
+        "edit": "Edit",
+        "delete": "Delete"
+      },
+      "status": {
+        "available": "Available",
+        "unavailable": "Unavailable",
+        "hidden": "Hidden"
+      },
+      "filters": {
+        "search": "Search",
+        "searchPlaceholder": "Title (uk or en)…",
+        "category": "Category",
+        "categoryAll": "All categories",
+        "visibility": "Visibility",
+        "visibilityAll": "All",
+        "visibilityVisible": "Visible",
+        "visibilityHidden": "Hidden",
+        "availability": "Availability",
+        "availabilityAll": "All",
+        "availabilityYes": "Available",
+        "availabilityNo": "Unavailable",
+        "reset": "Reset"
+      },
+      "pagination": {
+        "label": "Page navigation",
+        "prev": "Previous",
+        "next": "Next",
+        "of": "Page {page} of {totalPages}"
+      },
+      "delete": {
+        "title": "Delete puzzle?",
+        "description": "\"{title}\" will be hidden from the catalog. Existing orders are unaffected.",
+        "cancel": "Cancel",
+        "confirm": "Delete",
+        "confirming": "Deleting…"
+      },
+      "toast": {
+        "deleted": "Puzzle hidden",
+        "deleteFailed": "Failed to delete puzzle"
+      },
+      "condition": {
+        "NEW": "New",
+        "LIKE_NEW": "Like new",
+        "GOOD": "Good",
+        "FAIR": "Fair"
+      },
+      "type": {
+        "CLASSIC": "Classic",
+        "THREE_D": "3D",
+        "FLOOR": "Floor",
+        "EDUCATIONAL": "Educational"
+      },
+      "form": {
+        "lang": {
+          "uk": "Ukrainian",
+          "en": "English"
+        },
+        "sections": {
+          "basics": "Basics",
+          "details": "Details",
+          "images": "Images",
+          "imagesDescription": "Drag to reorder. The first image is used as the catalog thumbnail."
+        },
+        "fields": {
+          "titleUk": "Title (uk)",
+          "titleEn": "Title (en)",
+          "descriptionUk": "Description (uk)",
+          "descriptionEn": "Description (en)",
+          "category": "Category",
+          "pieceCount": "Piece count",
+          "condition": "Condition",
+          "type": "Type",
+          "rentalPricePerDay": "Rental price per day",
+          "depositAmount": "Deposit",
+          "isAvailable": "Available for rental"
+        },
+        "placeholders": {
+          "category": "Pick a category"
+        },
+        "hints": {
+          "uah": "In UAH (₴)"
+        },
+        "actions": {
+          "cancel": "Cancel",
+          "create": "Create puzzle",
+          "save": "Save changes",
+          "saving": "Saving…"
+        },
+        "toast": {
+          "created": "Puzzle created",
+          "updated": "Puzzle updated",
+          "failed": "Save failed"
+        },
+        "images": {
+          "dropzoneLabel": "Drop images here",
+          "dropHere": "Drop images here, or",
+          "browse": "Browse files",
+          "uploading": "Uploading…",
+          "hint": "Up to 20 images, max 5MB each",
+          "altUk": "Alt text (uk)",
+          "altEn": "Alt text (en)",
+          "position": "Position {n}",
+          "remove": "Remove image",
+          "dragHandle": "Drag to reorder",
+          "toast": {
+            "uploaded": "Images uploaded",
+            "uploadedMock": "Images attached (preview only)",
+            "uploadedMockDescription": "Upload endpoint not deployed yet — using local preview. Images will be re-uploaded once the upload service ships.",
+            "uploadFailed": "Upload failed",
+            "tooMany": "Maximum 20 images per puzzle"
+          }
+        }
+      }
     }
   }
 }

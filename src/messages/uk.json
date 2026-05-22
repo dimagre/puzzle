@@ -7,7 +7,8 @@
   "nav": {
     "home": "Головна",
     "catalog": "Каталог",
-    "login": "Увійти"
+    "login": "Увійти",
+    "admin": "Адмін"
   },
   "catalog": {
     "title": "Каталог пазлів",
@@ -109,6 +110,148 @@
       "THREE_D": "3D",
       "FLOOR": "Підлоговий",
       "EDUCATIONAL": "Навчальний"
+    }
+  },
+  "admin": {
+    "nav": {
+      "heading": "Адмін",
+      "puzzles": "Пазли"
+    },
+    "puzzles": {
+      "title": "Пазли",
+      "subtitle": "Всього: {total}",
+      "create": "Додати пазл",
+      "createTitle": "Новий пазл",
+      "editTitle": "Редагувати «{title}»",
+      "backToList": "До списку пазлів",
+      "empty": {
+        "title": "Пазлів ще немає",
+        "description": "Додайте перший пазл, щоб він з'явився в каталозі."
+      },
+      "table": {
+        "image": "",
+        "title": "Назва",
+        "category": "Категорія",
+        "pieces": "Деталі",
+        "price": "Ціна / день",
+        "status": "Статус",
+        "actions": "",
+        "noImage": "—"
+      },
+      "actions": {
+        "edit": "Редагувати",
+        "delete": "Видалити"
+      },
+      "status": {
+        "available": "Доступний",
+        "unavailable": "Недоступний",
+        "hidden": "Прихований"
+      },
+      "filters": {
+        "search": "Пошук",
+        "searchPlaceholder": "Назва (uk або en)…",
+        "category": "Категорія",
+        "categoryAll": "Всі категорії",
+        "visibility": "Видимість",
+        "visibilityAll": "Усі",
+        "visibilityVisible": "Видимі",
+        "visibilityHidden": "Приховані",
+        "availability": "Наявність",
+        "availabilityAll": "Усі",
+        "availabilityYes": "Доступні",
+        "availabilityNo": "Недоступні",
+        "reset": "Скинути"
+      },
+      "pagination": {
+        "label": "Навігація по сторінках",
+        "prev": "Назад",
+        "next": "Вперед",
+        "of": "Сторінка {page} з {totalPages}"
+      },
+      "delete": {
+        "title": "Видалити пазл?",
+        "description": "«{title}» буде приховано з каталогу. Існуючі замовлення не зміняться.",
+        "cancel": "Скасувати",
+        "confirm": "Видалити",
+        "confirming": "Видаляємо…"
+      },
+      "toast": {
+        "deleted": "Пазл приховано",
+        "deleteFailed": "Не вдалося видалити пазл"
+      },
+      "condition": {
+        "NEW": "Новий",
+        "LIKE_NEW": "Як новий",
+        "GOOD": "Хороший",
+        "FAIR": "Задовільний"
+      },
+      "type": {
+        "CLASSIC": "Класичний",
+        "THREE_D": "3D",
+        "FLOOR": "Підлоговий",
+        "EDUCATIONAL": "Навчальний"
+      },
+      "form": {
+        "lang": {
+          "uk": "Українська",
+          "en": "Англійська"
+        },
+        "sections": {
+          "basics": "Основне",
+          "details": "Деталі",
+          "images": "Зображення",
+          "imagesDescription": "Перетягуйте, щоб змінити порядок. Перше зображення використовується в каталозі."
+        },
+        "fields": {
+          "titleUk": "Назва (uk)",
+          "titleEn": "Назва (en)",
+          "descriptionUk": "Опис (uk)",
+          "descriptionEn": "Опис (en)",
+          "category": "Категорія",
+          "pieceCount": "Кількість деталей",
+          "condition": "Стан",
+          "type": "Тип",
+          "rentalPricePerDay": "Ціна оренди за день",
+          "depositAmount": "Застава",
+          "isAvailable": "Доступний для оренди"
+        },
+        "placeholders": {
+          "category": "Оберіть категорію"
+        },
+        "hints": {
+          "uah": "У гривнях (₴)"
+        },
+        "actions": {
+          "cancel": "Скасувати",
+          "create": "Створити пазл",
+          "save": "Зберегти зміни",
+          "saving": "Збереження…"
+        },
+        "toast": {
+          "created": "Пазл створено",
+          "updated": "Пазл оновлено",
+          "failed": "Не вдалося зберегти"
+        },
+        "images": {
+          "dropzoneLabel": "Перетягніть зображення сюди",
+          "dropHere": "Перетягніть зображення сюди або",
+          "browse": "Обрати файли",
+          "uploading": "Завантаження…",
+          "hint": "До 20 зображень, до 5 МБ кожне",
+          "altUk": "Alt-текст (uk)",
+          "altEn": "Alt-текст (en)",
+          "position": "Позиція {n}",
+          "remove": "Видалити зображення",
+          "dragHandle": "Перетягніть, щоб змінити порядок",
+          "toast": {
+            "uploaded": "Зображення завантажено",
+            "uploadedMock": "Зображення додано (попередній перегляд)",
+            "uploadedMockDescription": "Сервіс завантаження ще не задеплоєно — використовуємо локальний попередній перегляд. Файли буде перезавантажено, щойно сервіс запрацює.",
+            "uploadFailed": "Не вдалося завантажити",
+            "tooMany": "Максимум 20 зображень на пазл"
+          }
+        }
+      }
     }
   }
 }

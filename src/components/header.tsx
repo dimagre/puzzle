@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { cookies } from "next/headers";
 import { auth } from "@/auth";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { CartIcon } from "@/components/CartIcon";
 
 export async function Header() {
   const t = await getTranslations();
@@ -37,6 +38,7 @@ export async function Header() {
               {t("nav.profile")}
             </Link>
           ) : null}
+          <CartIcon />
           <LanguageSwitcher currentLocale={locale} />
         </div>
       </div>

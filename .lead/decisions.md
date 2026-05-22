@@ -21,3 +21,6 @@
 - **PUZ-36 created:** GitHub Actions workflow to extract Vercel preview URLs from bot comments and post clean PR comment. Assigned to fullstack-dev. Owner approved Option A (event-driven workflow over polling).
 - **Phase 2 started:** owner requested "давай починати фазу 2". Batch 1: PUZ-14 (Cart → ui-dev) + PUZ-17 (User profile → fullstack-dev) in parallel. Cart is localStorage-only (no schema change). Profile uses existing User fields. Next batch after these merge: PUZ-15 (Checkout).
 - **PUZ-17 merged (PR #16):** user profile page with order history. Squash-merged after one review round (specialist had accidentally modified .lead/ files; fixed with a revert commit, no force-push).
+- **PUZ-14 merged:** cart feature (localStorage, add/remove, rental days, header icon). All acceptance criteria met.
+- **Phase 2 batch 1 complete.** Both PUZ-14 and PUZ-17 merged to main.
+- **Phase 2 batch 2 started:** PUZ-15 (Checkout flow) assigned to fullstack-dev. Single-page form (not wizard), creates Order with status PENDING, no payment. Sequential dependency chain: PUZ-15 → PUZ-16 (Monobank) → PUZ-18 (Admin orders) → PUZ-19 (Email notifications).

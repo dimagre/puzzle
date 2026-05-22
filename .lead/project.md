@@ -39,8 +39,11 @@ Puzzles are expensive, take up space, and lose replay value after assembly. No c
 ## Current Phase
 Phase 2 (Commerce) started 2026-05-22. Phase 1 (Foundation) complete — all issues merged.
 
-Phase 2 batch 1 in flight:
-- PUZ-14 (Cart) → ui-dev
-- PUZ-17 (User profile) → fullstack-dev
+Phase 2 batch 1 DONE:
+- PUZ-14 (Cart) → ui-dev ✓ merged
+- PUZ-17 (User profile) → fullstack-dev ✓ merged
 
-Next in queue after batch 1 merges: PUZ-15 (Checkout flow), then PUZ-16 (Monobank), PUZ-18 (Admin orders), PUZ-19 (Email notifications).
+Phase 2 batch 2 in flight (started 2026-05-22):
+- PUZ-15 (Checkout flow) → fullstack-dev
+
+Next in queue after PUZ-15 merges: PUZ-16 (Monobank payments), PUZ-18 (Admin orders), PUZ-19 (Email notifications). These are sequential — each depends on the previous.

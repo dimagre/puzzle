@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -31,7 +32,12 @@ export function PuzzleCard({ puzzle, locale }: PuzzleCardProps) {
   const categoryLabel = locale === "en" ? puzzle.category.nameEn : puzzle.category.name;
 
   return (
-    <article className="flex flex-col overflow-hidden rounded-lg border border-border bg-white shadow-sm transition-shadow hover:shadow-md">
+    <Link
+      href={`/catalog/${puzzle.id}`}
+      className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 rounded-lg"
+      aria-label={title}
+    >
+    <article className="flex flex-col overflow-hidden rounded-lg border border-border bg-white shadow-sm transition-shadow group-hover:shadow-md">
       <div className="relative aspect-[4/3] w-full bg-cream">
         {puzzle.imageUrl ? (
           <Image
@@ -91,5 +97,6 @@ export function PuzzleCard({ puzzle, locale }: PuzzleCardProps) {
         </div>
       </div>
     </article>
+    </Link>
   );
 }

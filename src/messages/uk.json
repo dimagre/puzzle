@@ -74,5 +74,41 @@
     "paginationPrev": "Назад",
     "paginationNext": "Вперед",
     "paginationOf": "Сторінка {page} з {totalPages}"
+  },
+  "puzzleDetail": {
+    "breadcrumbHome": "Головна",
+    "breadcrumbCatalog": "Каталог",
+    "pieces": "деталей",
+    "pricePerDay": "₴/день",
+    "deposit": "Застава",
+    "depositAmount": "₴",
+    "available": "Доступний",
+    "unavailable": "Недоступний",
+    "rent": "Орендувати",
+    "comingSoon": "Незабаром",
+    "condition": "Стан",
+    "type": "Тип",
+    "category": "Категорія",
+    "description": "Опис",
+    "gallery": "Галерея зображень",
+    "imageAlt": "Зображення пазлу",
+    "thumbnailAlt": "Мініатюра {index}",
+    "openLightbox": "Відкрити зображення на повний екран",
+    "closeLightbox": "Закрити",
+    "notFound": "Пазл не знайдено",
+    "notFoundDescription": "Пазл з таким ID не існує або був видалений.",
+    "backToCatalog": "Повернутися до каталогу",
+    "conditions": {
+      "new": "Новий",
+      "excellent": "Відмінний",
+      "good": "Хороший",
+      "fair": "Задовільний"
+    },
+    "types": {
+      "CLASSIC": "Класичний",
+      "THREE_D": "3D",
+      "FLOOR": "Підлоговий",
+      "EDUCATIONAL": "Навчальний"
+    }
   }
 }

@@ -74,5 +74,41 @@
     "paginationPrev": "Previous",
     "paginationNext": "Next",
     "paginationOf": "Page {page} of {totalPages}"
+  },
+  "puzzleDetail": {
+    "breadcrumbHome": "Home",
+    "breadcrumbCatalog": "Catalog",
+    "pieces": "pieces",
+    "pricePerDay": "₴/day",
+    "deposit": "Deposit",
+    "depositAmount": "₴",
+    "available": "Available",
+    "unavailable": "Unavailable",
+    "rent": "Rent",
+    "comingSoon": "Coming soon",
+    "condition": "Condition",
+    "type": "Type",
+    "category": "Category",
+    "description": "Description",
+    "gallery": "Image gallery",
+    "imageAlt": "Puzzle image",
+    "thumbnailAlt": "Thumbnail {index}",
+    "openLightbox": "Open image fullscreen",
+    "closeLightbox": "Close",
+    "notFound": "Puzzle not found",
+    "notFoundDescription": "A puzzle with this ID does not exist or has been removed.",
+    "backToCatalog": "Back to catalog",
+    "conditions": {
+      "new": "New",
+      "excellent": "Excellent",
+      "good": "Good",
+      "fair": "Fair"
+    },
+    "types": {
+      "CLASSIC": "Classic",
+      "THREE_D": "3D",
+      "FLOOR": "Floor",
+      "EDUCATIONAL": "Educational"
+    }
   }
 }

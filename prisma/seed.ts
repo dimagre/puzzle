@@ -76,13 +76,13 @@ async function main() {
         images: {
           create: [
             {
-              url: "https://images.example.com/puzzles/carpathians-1.jpg",
+              url: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80",
               order: 0,
               alt: "Карпатські гори на світанку — головне фото",
               altEn: "Carpathian Mountains at Dawn — main photo",
             },
             {
-              url: "https://images.example.com/puzzles/carpathians-2.jpg",
+              url: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1200&q=80",
               order: 1,
               alt: "Деталь пазла Карпати",
               altEn: "Carpathians puzzle detail",
@@ -108,7 +108,7 @@ async function main() {
         images: {
           create: [
             {
-              url: "https://images.example.com/puzzles/sunflowers-1.jpg",
+              url: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=1200&q=80",
               order: 0,
               alt: "Соняшники Ван Гога — пазл",
               altEn: "Van Gogh Sunflowers puzzle",
@@ -134,7 +134,7 @@ async function main() {
         images: {
           create: [
             {
-              url: "https://images.example.com/puzzles/zoo-1.jpg",
+              url: "https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=1200&q=80",
               order: 0,
               alt: "Веселий зоопарк — дитячий пазл",
               altEn: "Happy Zoo — kids puzzle",
@@ -161,13 +161,13 @@ async function main() {
         images: {
           create: [
             {
-              url: "https://images.example.com/puzzles/lviv-1.jpg",
+              url: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1200&q=80",
               order: 0,
               alt: "Львів вночі — пазл",
               altEn: "Lviv at Night puzzle",
             },
             {
-              url: "https://images.example.com/puzzles/lviv-2.jpg",
+              url: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1200&q=80",
               order: 1,
               alt: "Львів вночі — деталь",
               altEn: "Lviv at Night detail",
@@ -193,7 +193,7 @@ async function main() {
         images: {
           create: [
             {
-              url: "https://images.example.com/puzzles/eiffel-1.jpg",
+              url: "https://images.unsplash.com/photo-1431274172761-fca41d930114?w=1200&q=80",
               order: 0,
               alt: "Ейфелева вежа 3D — пазл",
               altEn: "Eiffel Tower 3D puzzle",
@@ -221,7 +221,7 @@ async function main() {
         images: {
           create: [
             {
-              url: "https://images.example.com/puzzles/underwater-1.jpg",
+              url: "https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=1200&q=80",
               order: 0,
               alt: "Підводний світ — підлоговий пазл",
               altEn: "Underwater World floor puzzle",

@@ -43,3 +43,9 @@ PUZ-15 was merged to main but the next task (PUZ-16 Monobank) was never specced 
 fullstack-dev delivered a clean PR (13 files, 1753 insertions) on first submission — zero revision rounds. The spec was thorough (14 acceptance criteria, explicit file patterns, state machine definition, constraints on no schema changes) and the implementation matched exactly. No `.lead/` contamination this time — the standing constraint is finally sticking.
 
 **Pattern:** the "zero revision rounds" streak correlates with specs that include: (1) explicit state machine definitions, (2) named file paths for new code, (3) "do not modify" constraints, and (4) reference to existing patterns to follow. When all four are present, fullstack-dev delivers clean on first try. Keep this template for future specs.
+
+## 2026-05-22 — PUZ-19 email notifications
+
+fullstack-dev delivered a clean PR (14 files, 1186 insertions) on first submission — zero revision rounds. Notable quality signals: proper `encodeURIComponent` on the Nova Poshta tracking URL, status-change guard that prevents duplicate emails on no-op updates, graceful degradation when env vars are missing, and a pragmatic vitest config fix (`@vitejs/plugin-react`) to handle JSX in transitively-imported templates.
+
+**Pattern:** the zero-revision streak continues (PUZ-18, PUZ-19 back-to-back). The spec template is proven: explicit file paths, fire-and-forget constraint, "do not modify" list, and pinned dependency versions. Phase 2 dependency chain (PUZ-15→16→18→19) completed with no pipeline stalls after the initial PUZ-15 lesson was internalized.

@@ -8,7 +8,95 @@
     "home": "Головна",
     "catalog": "Каталог",
     "login": "Увійти",
-    "admin": "Адмін"
+    "admin": "Адмін",
+    "profile": "Мій профіль"
+  },
+  "profile": {
+    "title": "Мій профіль",
+    "subtitle": "Керуйте своїми даними та переглядайте історію замовлень.",
+    "info": {
+      "heading": "Особисті дані",
+      "description": "Ці дані використовуються для оформлення оренди та доставки.",
+      "name": "Імʼя",
+      "email": "Email",
+      "emailHint": "Email змінити не можна.",
+      "phone": "Телефон",
+      "phoneHint": "Український мобільний у форматі +380XXXXXXXXX",
+      "deliveryHeading": "Адреса доставки",
+      "deliveryHint": "Дані Нової Пошти. Поки що вводяться вручну.",
+      "region": "Область",
+      "city": "Місто",
+      "warehouse": "Відділення / поштомат",
+      "warehouseHint": "Наприклад: «Відділення №12 (вул. Хрещатик, 22)»",
+      "save": "Зберегти зміни",
+      "saving": "Зберігаємо…",
+      "toast": {
+        "saved": "Зміни збережено",
+        "failed": "Не вдалося зберегти"
+      }
+    },
+    "password": {
+      "heading": "Зміна пароля",
+      "description": "Оновіть пароль для входу до акаунта.",
+      "current": "Поточний пароль",
+      "new": "Новий пароль",
+      "confirm": "Підтвердіть новий пароль",
+      "hint": "Мінімум 8 символів.",
+      "save": "Змінити пароль",
+      "saving": "Зберігаємо…",
+      "toast": {
+        "changed": "Пароль оновлено",
+        "failed": "Не вдалося змінити пароль"
+      }
+    },
+    "validation": {
+      "nameRequired": "Введіть імʼя",
+      "phoneInvalid": "Неправильний формат телефону. Приклад: +380501234567",
+      "currentPasswordRequired": "Введіть поточний пароль",
+      "currentPasswordInvalid": "Поточний пароль неправильний",
+      "passwordTooShort": "Пароль має містити щонайменше 8 символів",
+      "passwordsMustMatch": "Паролі не збігаються"
+    },
+    "orders": {
+      "heading": "Історія замовлень",
+      "description": "Останні замовлення. Натисніть на замовлення для перегляду деталей.",
+      "total": "Загалом",
+      "itemCount": "{count, plural, one {# пазл} few {# пазли} many {# пазлів} other {# пазлів}}",
+      "empty": {
+        "title": "Замовлень ще немає",
+        "description": "Орендуйте перший пазл — і він зʼявиться тут.",
+        "cta": "До каталогу"
+      }
+    },
+    "orderDetail": {
+      "title": "Замовлення #{id}",
+      "back": "Назад до профілю",
+      "itemsHeading": "Пазли",
+      "itemMeta": "{days} дн. × {price}",
+      "summaryHeading": "Підсумок",
+      "itemsTotal": "Сума оренди",
+      "deposit": "Застава",
+      "total": "Разом до сплати",
+      "delivery": "Спосіб доставки",
+      "trackingNumber": "Номер відстеження",
+      "trackingNotSet": "Ще не призначено",
+      "notFoundTitle": "Замовлення не знайдено",
+      "notFoundDescription": "Замовлення не існує або не належить вам."
+    }
+  },
+  "orderStatus": {
+    "PENDING": "Очікує підтвердження",
+    "CONFIRMED": "Підтверджено",
+    "SHIPPED": "Відправлено",
+    "DELIVERED": "Доставлено",
+    "RETURNED": "Повернуто",
+    "CANCELLED": "Скасовано"
+  },
+  "deliveryMethod": {
+    "NOVA_POSHTA": "Нова Пошта",
+    "UKRPOSHTA": "Укрпошта",
+    "SELF_PICKUP_WAREHOUSE": "Самовивіз зі складу",
+    "SELF_PICKUP_SELLER": "Самовивіз від продавця"
   },
   "catalog": {
     "title": "Каталог пазлів",

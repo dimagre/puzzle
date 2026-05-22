@@ -9,6 +9,7 @@ import {
   internalError,
 } from "@/lib/api/errors";
 import { createOrderSchema } from "@/lib/validation/checkout";
+import { notifyAdminOfNewOrder } from "@/lib/email/notify";
 
 export const dynamic = "force-dynamic";
 
@@ -158,6 +159,14 @@ export async function POST(req: NextRequest) {
       }
 
       return created;
+    });
+
+    notifyAdminOfNewOrder({
+      orderId: order.id,
+      customerName: data.contactName,
+      customerEmail: guard.user.email,
+      totalAmount: Number(grandTotal),
+      itemCount: data.items.length,
     });
 
     return NextResponse.json({ orderId: order.id }, { status: 201 });

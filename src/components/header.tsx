@@ -4,6 +4,7 @@ import { cookies } from "next/headers";
 import { auth } from "@/auth";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { CartIcon } from "@/components/CartIcon";
+import { MainNav } from "@/components/main-nav";
 
 export async function Header() {
   const t = await getTranslations();
@@ -13,9 +14,15 @@ export async function Header() {
   const isLoggedIn = !!session?.user?.id;
   const isAdmin = session?.user?.role === "ADMIN";
 
+  const navItems = [
+    { href: "/", label: t("nav.home") },
+    { href: "/catalog", label: t("nav.catalog") },
+    { href: "/login", label: t("nav.login") },
+  ];
+
   return (
     <header className="border-b border-gray-200 bg-white">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-3 sm:px-6 lg:px-8">
         <div className="flex items-center gap-6">
           <Link href="/" className="text-xl font-bold text-sage">
             {t("common.title")}
@@ -29,6 +36,7 @@ export async function Header() {
             </Link>
           ) : null}
         </div>
+        <MainNav items={navItems} />
         <div className="flex items-center gap-4">
           {isLoggedIn ? (
             <Link

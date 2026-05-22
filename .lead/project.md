@@ -37,4 +37,10 @@ Puzzles are expensive, take up space, and lose replay value after assembly. No c
 - One-time: $100
 
 ## Current Phase
-Phase 1 (Foundation) nearly complete. Auth done, Puzzle API merged, catalog UI wired next. Staging deploy in progress on Vercel.
+Phase 2 (Commerce) started 2026-05-22. Phase 1 (Foundation) complete — all issues merged.
+
+Phase 2 batch 1 in flight:
+- PUZ-14 (Cart) → ui-dev
+- PUZ-17 (User profile) → fullstack-dev
+
+Next in queue after batch 1 merges: PUZ-15 (Checkout flow), then PUZ-16 (Monobank), PUZ-18 (Admin orders), PUZ-19 (Email notifications).

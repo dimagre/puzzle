@@ -9,7 +9,27 @@
     "catalog": "Каталог",
     "login": "Увійти",
     "admin": "Адмін",
-    "profile": "Мій профіль"
+    "profile": "Мій профіль",
+    "cart": "Кошик"
+  },
+  "cart": {
+    "title": "Ваш кошик",
+    "empty": "Кошик порожній",
+    "emptyDescription": "Перегляньте каталог і додайте пазли для оренди.",
+    "browseCatalog": "Переглянути каталог",
+    "rentalDays": "Днів оренди",
+    "rentalSubtotal": "Сума оренди",
+    "depositSubtotal": "Сума застави",
+    "grandTotal": "Загальна сума",
+    "remove": "Видалити",
+    "pieces": "деталей",
+    "perDay": "/день",
+    "deposit": "Застава",
+    "days": "днів",
+    "addToCart": "Орендувати",
+    "alreadyInCart": "Вже в кошику",
+    "addedToCart": "Додано до кошика",
+    "addedToCartDescription": "{title} додано до вашого кошика."
   },
   "profile": {
     "title": "Мій профіль",

@@ -9,7 +9,27 @@
     "catalog": "Catalog",
     "login": "Sign In",
     "admin": "Admin",
-    "profile": "My profile"
+    "profile": "My profile",
+    "cart": "Cart"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "emptyDescription": "Browse our catalog and add puzzles to rent.",
+    "browseCatalog": "Browse Catalog",
+    "rentalDays": "Rental days",
+    "rentalSubtotal": "Rental subtotal",
+    "depositSubtotal": "Deposit subtotal",
+    "grandTotal": "Grand total",
+    "remove": "Remove",
+    "pieces": "pieces",
+    "perDay": "/day",
+    "deposit": "Deposit",
+    "days": "days",
+    "addToCart": "Rent",
+    "alreadyInCart": "Already in cart",
+    "addedToCart": "Added to cart",
+    "addedToCartDescription": "{title} has been added to your cart."
   },
   "profile": {
     "title": "My profile",

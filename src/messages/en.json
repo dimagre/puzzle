@@ -547,5 +547,48 @@
         }
       }
     }
+  },
+  "homepage": {
+    "hero": {
+      "heading": "Puzzle rental — simple and affordable",
+      "subheading": "Choose from hundreds of puzzles, rent for as long as you need, and enjoy together with your family.",
+      "cta": "Browse catalog"
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "step1": {
+        "title": "Pick a puzzle",
+        "description": "Browse the catalog and find a puzzle you love."
+      },
+      "step2": {
+        "title": "Rent it",
+        "description": "Complete your rental online and receive the puzzle at your convenience."
+      },
+      "step3": {
+        "title": "Enjoy",
+        "description": "Assemble the puzzle, then return it or swap for a new one."
+      }
+    },
+    "values": {
+      "title": "Why PuzzleShare",
+      "eco": {
+        "title": "Eco-friendly",
+        "description": "Sharing puzzles instead of buying new ones — less waste, more joy."
+      },
+      "affordable": {
+        "title": "Affordable",
+        "description": "Renting costs far less than buying. More puzzles for the same budget."
+      },
+      "variety": {
+        "title": "Great variety",
+        "description": "Hundreds of puzzles in different difficulties and themes for the whole family."
+      }
+    },
+    "finalCta": {
+      "heading": "Ready to start?",
+      "subheading": "Browse the catalog or sign in to track your rentals.",
+      "catalogCta": "Browse catalog",
+      "loginCta": "Sign In"
+    }
   }
 }

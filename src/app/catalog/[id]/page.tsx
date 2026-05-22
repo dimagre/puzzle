@@ -171,7 +171,18 @@ export default async function PuzzleDetailPage({ params }: PageProps) {
           )}
 
           {/* Rent button */}
-          <RentButton isAvailable={puzzle.isAvailable} />
+          <RentButton
+            puzzle={{
+              puzzleId: puzzle.id,
+              title: puzzle.title,
+              titleEn: puzzle.titleEn,
+              imageUrl: puzzle.imageUrl ?? (puzzle.images[0]?.url ?? ""),
+              pieceCount: puzzle.pieces,
+              rentalPricePerDay: puzzle.pricePerDay,
+              depositAmount: puzzle.depositAmount,
+            }}
+            isAvailable={puzzle.isAvailable}
+          />
         </div>
       </div>
     </div>

@@ -29,7 +29,77 @@
     "addToCart": "Rent",
     "alreadyInCart": "Already in cart",
     "addedToCart": "Added to cart",
-    "addedToCartDescription": "{title} has been added to your cart."
+    "addedToCartDescription": "{title} has been added to your cart.",
+    "proceedToCheckout": "Proceed to checkout"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "subtitle": "Pick a delivery method and provide contact details.",
+    "emptyTitle": "Your cart is empty",
+    "emptyDescription": "Add at least one puzzle before placing an order.",
+    "delivery": {
+      "heading": "Delivery method",
+      "description": "Choose how you want to receive the puzzles."
+    },
+    "address": {
+      "region": "Region",
+      "city": "City",
+      "warehouse": "Nova Poshta warehouse / locker",
+      "warehouseHint": "Example: \"Warehouse #12 (22 Khreschatyk St.)\"",
+      "street": "Street and building number",
+      "postalCode": "Postal code",
+      "pickupWarehouse": "Warehouse address",
+      "pickupSeller": "Seller address",
+      "pickupNotConfigured": "We will share the address once your order is confirmed."
+    },
+    "contact": {
+      "heading": "Contact details",
+      "description": "We will call this number to confirm the order.",
+      "name": "Name",
+      "phone": "Phone",
+      "phoneHint": "Ukrainian mobile in format +380XXXXXXXXX"
+    },
+    "summary": {
+      "heading": "Your order",
+      "itemMeta": "{days} d × {price}",
+      "deposit": "Deposit",
+      "rentalSubtotal": "Rental subtotal",
+      "depositSubtotal": "Deposit subtotal",
+      "grandTotal": "Total due",
+      "unavailable": "No longer available"
+    },
+    "submit": "Place order",
+    "submitting": "Placing order…",
+    "submitHint": "Payment is collected after a manager confirms the order.",
+    "validation": {
+      "fieldRequired": "This field is required",
+      "nameRequired": "Enter a name",
+      "phoneInvalid": "Invalid phone. Example: +380501234567",
+      "regionRequired": "Enter a region",
+      "cityRequired": "Enter a city",
+      "warehouseRequired": "Enter a warehouse number",
+      "streetRequired": "Enter a street and building",
+      "postalCodeRequired": "Enter a postal code"
+    },
+    "toast": {
+      "failedTitle": "Could not place order",
+      "failedDescription": "Please try again.",
+      "unavailableTitle": "Some puzzles are no longer available",
+      "unavailableDescription": "Review the cart and remove the highlighted items."
+    },
+    "success": {
+      "title": "Order placed",
+      "description": "Thanks! We will reach out to confirm.",
+      "orderNumber": "Order number",
+      "placedAt": "Placed at",
+      "delivery": "Delivery method",
+      "rentalSubtotal": "Rental subtotal",
+      "deposit": "Deposit",
+      "grandTotal": "Total",
+      "viewOrders": "My orders",
+      "continueBrowsing": "Browse catalog",
+      "orderNotFound": "Order created, but details are unavailable."
+    }
   },
   "profile": {
     "title": "My profile",

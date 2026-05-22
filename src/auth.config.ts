@@ -63,7 +63,8 @@ export const authConfig = {
       }
       if (
         nextUrl.pathname.startsWith("/profile") ||
-        nextUrl.pathname.startsWith("/cart")
+        nextUrl.pathname.startsWith("/cart") ||
+        nextUrl.pathname.startsWith("/checkout")
       ) {
         return isLoggedIn;
       }

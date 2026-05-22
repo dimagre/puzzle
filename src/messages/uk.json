@@ -29,7 +29,77 @@
     "addToCart": "Орендувати",
     "alreadyInCart": "Вже в кошику",
     "addedToCart": "Додано до кошика",
-    "addedToCartDescription": "{title} додано до вашого кошика."
+    "addedToCartDescription": "{title} додано до вашого кошика.",
+    "proceedToCheckout": "Оформити замовлення"
+  },
+  "checkout": {
+    "title": "Оформлення замовлення",
+    "subtitle": "Оберіть спосіб доставки та вкажіть контактні дані.",
+    "emptyTitle": "Кошик порожній",
+    "emptyDescription": "Перш ніж оформити замовлення, додайте хоча б один пазл.",
+    "delivery": {
+      "heading": "Спосіб доставки",
+      "description": "Оберіть, як хочете отримати пазли."
+    },
+    "address": {
+      "region": "Область",
+      "city": "Місто",
+      "warehouse": "Відділення / поштомат Нової Пошти",
+      "warehouseHint": "Наприклад: «Відділення №12 (вул. Хрещатик, 22)»",
+      "street": "Вулиця та номер будинку",
+      "postalCode": "Поштовий індекс",
+      "pickupWarehouse": "Адреса складу",
+      "pickupSeller": "Адреса продавця",
+      "pickupNotConfigured": "Адресу буде надіслано після підтвердження замовлення."
+    },
+    "contact": {
+      "heading": "Контактні дані",
+      "description": "Цей телефон зателефонує менеджер для підтвердження.",
+      "name": "Імʼя",
+      "phone": "Телефон",
+      "phoneHint": "Український мобільний у форматі +380XXXXXXXXX"
+    },
+    "summary": {
+      "heading": "Ваше замовлення",
+      "itemMeta": "{days} дн. × {price}",
+      "deposit": "Застава",
+      "rentalSubtotal": "Сума оренди",
+      "depositSubtotal": "Сума застави",
+      "grandTotal": "Разом до сплати",
+      "unavailable": "Більше не доступний"
+    },
+    "submit": "Оформити замовлення",
+    "submitting": "Створюємо замовлення…",
+    "submitHint": "Оплата здійснюється після підтвердження менеджером.",
+    "validation": {
+      "fieldRequired": "Поле обовʼязкове",
+      "nameRequired": "Введіть імʼя",
+      "phoneInvalid": "Неправильний формат телефону. Приклад: +380501234567",
+      "regionRequired": "Введіть область",
+      "cityRequired": "Введіть місто",
+      "warehouseRequired": "Введіть номер відділення",
+      "streetRequired": "Введіть вулицю та номер будинку",
+      "postalCodeRequired": "Введіть поштовий індекс"
+    },
+    "toast": {
+      "failedTitle": "Не вдалося створити замовлення",
+      "failedDescription": "Спробуйте ще раз.",
+      "unavailableTitle": "Деякі пазли вже недоступні",
+      "unavailableDescription": "Перегляньте кошик і приберіть позначені позиції."
+    },
+    "success": {
+      "title": "Замовлення прийнято",
+      "description": "Дякуємо! Ми звʼяжемося з вами для підтвердження.",
+      "orderNumber": "Номер замовлення",
+      "placedAt": "Створено",
+      "delivery": "Спосіб доставки",
+      "rentalSubtotal": "Сума оренди",
+      "deposit": "Застава",
+      "grandTotal": "Разом",
+      "viewOrders": "Мої замовлення",
+      "continueBrowsing": "До каталогу",
+      "orderNotFound": "Замовлення створено, але деталі недоступні."
+    }
   },
   "profile": {
     "title": "Мій профіль",
